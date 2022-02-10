@@ -1,64 +1,257 @@
-import React, { useState } from 'react';
+import React, { useState , useEffect} from 'react';
 
 //This component for conversion can be reused/expanded for other measurements
-//Currently do not know how to route between two components.
+//Currently do not know how to route between two components from a dropdown menu
 
   const Mass = () =>{
     //the unit types are represented by these. Intial units set.
     // The value is change on selection below
-    const [values1, setValues1] = useState('Feet');
-    const [values2, setValues2] = useState('Meters');
+    //Current Options for conversion are: Pounds, Ounces, Grams, MetricTonnes, Milligrams, Kilograms
+    const [values1, setValues1] = useState('Pounds');
+    const [values2, setValues2] = useState('Grams');
     //The representation of the output value
-    const[inValue, setInValue] = useState();
+    const[outValue, setoutValue] = useState();
+    //The input value is stored when conversion happens.
+    //This allows for conversion when units are changed
+    const[reValue, setReValue] = useState(0);
 
     //conversion occurs by conditionals
     //check first/top measurement, then select conversion based on second
-    //setInValue sets the result which automatically appears in the bottom textbox
-    const lengthConvert = (i) =>{
-       if(values1 === "Feet"){
-           if(values2 === "Meters"){
-               const result = i * 0.3048;
-               const result1 = result.toFixed(2);
-               setInValue(result1);
-           }else if(values2 === "Feet"){
-               setInValue(i);
+    //setoutValue sets the result which automatically appears in the bottom textbox
+    const massConvert = (i) =>{
+        setReValue(i);
+       if(values1 === "Pounds"){
+           if(values2 === "Grams"){
+               const result = i * 453.59237;
+               const result1 = result.toFixed(10);
+               setoutValue(result1);
            }
-       }else if(values1 === "Meters"){
-           if(values2 === "Feet"){
-               const result = i * 3.2808399;
-               const result1 = result.toFixed(2);
-               setInValue(result1);
-           }else if(values2 === "Meters"){
-               setInValue(i);
+           else if(values2 === "Milligrams"){
+                const result = i * 453592.37
+                const result1 = result.toFixed(10);
+                setoutValue(result1);
+           }
+           else if(values2 === "Ounces"){
+                const result = i * 16;
+                const result1 = result.toFixed(10);
+                setoutValue(result1);
+            }
+           else if(values2 === "MetricTonnes"){
+                const result = i * 0.00045359;
+                const result1 = result.toFixed(10);
+                setoutValue(result1);
+            }
+            else if(values2 === "Kilograms"){
+                const result = i * 0.45359237;
+                const result1 = result.toFixed(10);
+                setoutValue(result1);
+            }
+           else if(values2 === "Pounds"){
+               setoutValue(i);
            }
        }
-    }
-    //render/html for Length Conversion
+       else if(values1 === "Grams"){
+           if(values2 === "Pounds"){
+               const result = i * 0.00220462;
+               const result1 = result.toFixed(10);
+               setoutValue(result1);
+           }
+           else if(values2 === "Ounces"){
+                const result = i * 0.03527396;
+                const result1 = result.toFixed(10);
+                setoutValue(result1);
+            }
+           else if(values2 === "Milligrams"){
+                const result = i * 1000;
+                const result1 = result.toFixed(10);
+                setoutValue(result1);
+            }
+            else if(values2 === "MetricTonnes"){
+                const result = i * 0.000001;
+                const result1 = result.toFixed(10);
+                setoutValue(result1);
+            }
+            else if(values2 === "Kilograms"){
+                const result = i * 0.001;
+                const result1 = result.toFixed(10);
+                setoutValue(result1);
+            }
+           else if(values2 === "Grams"){
+               setoutValue(i);
+           }
+       }
+       else if(values1 === "Ounces"){
+            if(values2 === "Pounds"){
+                const result = i * 0.0625;
+                const result1 = result.toFixed(10);
+                setoutValue(result1);
+            }
+            else if(values2 === "Grams"){
+                const result = i * 28.3495231;
+                const result1 = result.toFixed(10);
+                setoutValue(result1);
+            }
+            else if(values2 === "Milligrams"){
+                const result = i * 28349.5231;
+                const result1 = result.toFixed(10);
+                setoutValue(result1);
+            }
+            else if(values2 === "MetricTonnes"){
+                const result = i * 0.00002835;
+                const result1 = result.toFixed(10);
+                setoutValue(result1);
+            }  
+            else if(values2 === "Kilograms"){
+                const result = i * 0.02834952;
+                const result1 = result.toFixed(10);
+                setoutValue(result1);
+            }
+            else if(values2 === "Ounces"){
+                setoutValue(i);
+            }
+        }
+        else if(values1 === "MetricTonnes"){
+            if(values2 === "Pounds"){
+                const result = i * 2204.62262;
+                const result1 = result.toFixed(10);
+                setoutValue(result1);
+            }
+            else if(values2 === "Grams"){
+                const result = i * 1000000;
+                const result1 = result.toFixed(10);
+                setoutValue(result1);
+            }
+            else if(values2 === "Milligrams"){
+                const result = i * 1000000000;
+                const result1 = result.toFixed(10);
+                setoutValue(result1);
+            }
+            else if(values2 === "Ounces"){
+                const result = i * 35273.962;
+                const result1 = result.toFixed(10);
+                setoutValue(result1);
+            }  
+            else if(values2 === "Kilograms"){
+                const result = i * 1000;
+                const result1 = result.toFixed(10);
+                setoutValue(result1);
+            }
+            else if(values2 === "MetricTonnes"){
+                setoutValue(i);
+            }
+        }
+        else if(values1 === "Milligrams"){
+            if(values2 === "Pounds"){
+                const result = i * 0.0000022;
+                const result1 = result.toFixed(7);
+                setoutValue(result1);
+            }
+            else if(values2 === "Grams"){
+                const result = i * 0.001;
+                const result1 = result.toFixed(5);
+                setoutValue(result1);
+            }
+            else if(values2 === "MetricTonnes"){
+                const result = i * 0.0000000001;
+                const result1 = result.toFixed(12);
+                setoutValue(result1);
+            }
+            else if(values2 === "Ounces"){
+                const result = i * 0.00003527;
+                const result1 = result.toFixed(8);
+                setoutValue(result1);
+            }  
+            else if(values2 === "Kilograms"){
+                const result = i * 0.000001;
+                const result1 = result.toFixed(7);
+                setoutValue(result1);
+            }
+            else if(values2 === "Milligrams"){
+                setoutValue(i);
+            }
+        }
+        else if(values1 === "Kilograms"){
+            if(values2 === "Pounds"){
+                const result = i * 2.20462262;
+                const result1 = result.toFixed(7);
+                setoutValue(result1);
+            }
+            else if(values2 === "Grams"){
+                const result = i * 1000;
+                const result1 = result.toFixed(4);
+                setoutValue(result1);
+            }
+            else if(values2 === "MetricTonnes"){
+                const result = i * 0.001;
+                const result1 = result.toFixed(4);
+                setoutValue(result1);
+            }
+            else if(values2 === "Ounces"){
+                const result = i * 35.273962;
+                const result1 = result.toFixed(8);
+                setoutValue(result1);
+            }  
+            else if(values2 === "Milligrams"){
+                const result = i * 1000000;
+                const result1 = result.toFixed(7);
+                setoutValue(result1);
+            }
+            else if(values2 === "Kilograms"){
+                setoutValue(i);
+            }
+        }  
+    } 
+
+    //When option of either dropdown menu changes, convert with the stored input value
+    useEffect(() => {
+        massConvert(reValue);}, [values1, values2] );
+    
+    //Add border around conversion inputs. Adjust border from here
+    const styles = {
+            border: '1px solid rgba(0, 0, 0, 1.00)', 
+            width: '300px',
+            height: '200px',
+       };
+    //render/html for Mass Conversion
     //Two Dropdown boxes to pick measurement types
     // An input text field to enter a number (top).
     // An input text field that outputs converted result (readonly/noneditable)
     return (
-        <><h2>Mass Conversion</h2>
-        <p>Change units then enter a number.</p>
-            
-            <div className="container">
+        
+        <><div align="center"><h2>Mass and Weight Conversion</h2>
+        <p>Select units and enter a number.</p>
+            <body style={styles}>
+            <br></br>
+            <div>
                 <form>
-                    <input type="text" id = "initial length" type='number' onChange={e => lengthConvert(e.target.value)}/>
-                    <select id = "lengthType1" onChange={e => setValues1(e.target.value)}>
-                        <option value="Feet">Feet</option>
-                        <option value ="Meters">Meters</option>
+                    <input type="text" id = "initial mass" type='number' onChange={e => massConvert(e.target.value)}/>
+                    <select id = "massType1" onChange={e => setValues1(e.target.value)}>
+                        <option value="Pounds">Pounds</option>
+                        <option value ="Ounces">Ounces</option>
+                        <option value ="Milligrams">Milligrams</option>
+                        <option value ="MetricTonnes">Metric Tonnes</option>
+                        <option value ="Grams">Grams</option>
+                        <option value ="Kilograms">Kilometer</option>
+                        
                     </select>
                 </form>   
             </div>
-
+            <br></br>
             <p> &nbsp; to &nbsp; </p>
-
+            <br></br>
             <div>
-                <input type = "text" value={inValue} readonly = "readonly"/>
-                <select id = "lengthType2" onChange={e => setValues2(e.target.value)}>
-                    <option value ="Meters">Meters</option>
-                    <option value="Feet">Feet</option>
+                <input type = "text" value={outValue} readonly = "readonly"/>
+                <select id = "massType2" onChange={e => {setValues2(e.target.value)}}>
+                    <option value ="Grams">Grams</option>
+                    <option value="Pounds">Pounds</option>
+                    <option value ="Ounces">Ounces</option>
+                    <option value ="Milligrams">Milligrams</option>
+                    <option value ="MetricTonnes">Metric Tonnes</option>
+                    <option value ="Kilograms">Kilometer</option>
                 </select>
+            </div>
+            <br></br>
+            </body>
             </div>
             </>
 
