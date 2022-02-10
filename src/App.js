@@ -1,5 +1,6 @@
 import Length from "./Components/Conversion/Length";
 import Mass from "./Components/Conversion/Mass";
+import Temperature from "./Components/Conversion/Temperature";
 import React from "react";
 import { BrowserRouter as Router,Routes, Route, Link } from 'react-router-dom';
 
@@ -20,11 +21,13 @@ function App() {
     <Link to ="/">Length</Link>
     <br></br>
     <Link to = "/Mass">Mass</Link>
+     <br></br>
+    <Link to = "/Temperature">Temperature</Link>
     <Routes>
       <Route exact path = '/' element={<Length />}></Route>
       <Route exact path = '/Mass' element={<Mass />}></Route>
+      <Route exact path = '/Temperature' element={<Temperature />}></Route>
     </Routes>
-
       </Router>
       </>
   );
