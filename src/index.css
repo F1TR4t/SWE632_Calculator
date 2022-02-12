@@ -60,6 +60,16 @@ button:hover{
   font-weight: 700;
 }
 
+.functions {
+    display: flex;
+}
+
+.functions button {
+    flex: 1 1 0%;
+    background-color: var(--primary);
+    font-weight: 700;
+}
+
 .digits{
   display: flex;
   flex-wrap: wrap;
