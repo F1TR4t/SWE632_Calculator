@@ -6,7 +6,7 @@ import React, { useState , useEffect} from 'react';
   const Temperature = () =>{
     //the unit types are represented by these. Intial units set.
     // The value is change on selection below
-    //Current Options for conversion are: Fahrenheit, Kelvin, Celsius, Centimeters, Millimeters, Kilometers
+    //Current Options for conversion are: Fahrenheit, Kelvin, Celsius
     const [values1, setValues1] = useState('Fahrenheit');
     const [values2, setValues2] = useState('Celsius');
     //The representation of the output value
@@ -23,13 +23,13 @@ import React, { useState , useEffect} from 'react';
        if(values1 === "Fahrenheit"){
            if(values2 === "Celsius"){
                const result = (i -32)* (5/9);
-               const result1 = result.toFixed(4);
-               setoutValue(result1);
+               
+               setoutValue(result);
            }
            else if(values2 === "Kelvin"){
                 const result = ( i - 32) * (5/9) + 273.15;
-                const result1 = result.toFixed(4);
-                setoutValue(result1);
+                
+                setoutValue(result);
             }
            else if(values2 === "Fahrenheit"){
                setoutValue(i);
@@ -38,13 +38,13 @@ import React, { useState , useEffect} from 'react';
        else if(values1 === "Celsius"){
            if(values2 === "Fahrenheit"){
                const result = (i*(9/5))+32;
-               const result1 = result.toFixed(4);
-               setoutValue(result1);
+               
+               setoutValue(result);
            }
            else if(values2 === "Kelvin"){
                 const result = i + 273.15;
-                const result1 = result.toFixed(4);
-                setoutValue(result1);
+                
+                setoutValue(result);
             }
            else if(values2 === "Celsius"){
                setoutValue(i);
@@ -53,13 +53,13 @@ import React, { useState , useEffect} from 'react';
        else if(values1 === "Kelvin"){
             if(values2 === "Fahrenheit"){
                 const result = (i - 273.15) * (9/5) + 32 ;
-                const result1 = result.toFixed(4);
-                setoutValue(result1);
+                
+                setoutValue(result);
             }
             else if(values2 === "Celsius"){
                 const result = i -273.15;
-                const result1 = result.toFixed(4);
-                setoutValue(result1);
+                
+                setoutValue(result);
             }
             else if(values2 === "Kelvin"){
                 setoutValue(i);
