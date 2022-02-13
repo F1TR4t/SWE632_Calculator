@@ -5,42 +5,77 @@ const TaxCalculator = () =>{
     const [values1, setValues1] = useState('Alabama');
     const [values2, setValues2] = useState('0');
     const [values3, setValues3] = useState('0');
-    const[outValue, setoutValue] = useState();
-    const[reValue, setReValue] = useState(0);
+    const [values4, setValues4] = useState('0');
 
-    const lengthConvert = (i) =>{
-        setReValue(i);
-       if(values1 === "Alabama"){
-           const result = i * 0.3048;
-           const result1 = result.toFixed(4);
-           setoutValue(result1);
-        }
-    }
+    const box = {
+        border: '2px solid rgba(0, 0, 0, 1.00)', 
+        width: '500px',
+        height: '120px',
+    };
 
     const calcTax = () => {
         const digits = [];
-        const totalFed = 0;
-        const totalSt = 0;
+        var totalFed = 0;
+        var totalSt = 0;
+        var taxableIncome = values2-values3-values4;
 
-        digits.push(<h5>Total taxable income: {values2-values3}</h5>)
+        digits.push(<h5>Total taxable income: ${taxableIncome.toFixed(2)}</h5>)
 
         digits.push(<h3>Federal tax calculation:</h3>)
-        for(let i=1; i<5; i++){
-            digits.push(<body> some output here </body>)
+        // calculated based on brackets from nerd wallet: https://www.nerdwallet.com/article/taxes/federal-income-tax-brackets
+        if(taxableIncome<=9950){
+            totalFed = taxableIncome*.1;
+            digits.push(<text>Tax Bracket: 10%</text>)
         }
+        else if(taxableIncome<=40525){
+            totalFed = 995+(taxableIncome-9950)*.12;
+            digits.push(<text>Tax Bracket: 12% (on income above $9,950)</text>)
+        }
+        else if(taxableIncome<=86375){
+            totalFed = 4664+(taxableIncome-40525)*.22;
+            digits.push(<text>Tax Bracket: 22% (on income above $40,525)</text>)
+        }
+        else if(taxableIncome<=164925){
+            totalFed = 14751+(taxableIncome-85375)*.24;
+            digits.push(<text>Tax Bracket: 24% (on income above $86,375)</text>)
+        }
+        else if(taxableIncome<=209425){
+            totalFed = 33603+(taxableIncome-164925)*.32;
+            digits.push(<text>Tax Bracket: 32% (on income above $164,925)</text>)
+        }
+        else if(taxableIncome<=523600){
+            totalFed = 47843+(taxableIncome-209425)*.35;
+            digits.push(<text>Tax Bracket: 35% (on income above $209,425)</text>)
+        }
+        else{
+            totalFed = 157804.25+(taxableIncome-523600)*.37;
+            digits.push(<text>Tax Bracket: 37% (on income above $523,600)</text>)
+        }
+
+        digits.push(<h4>${totalFed.toFixed(2)} in Federal Taxes</h4>)
+
         digits.push(<h3>Estimated State tax calculation:</h3>)
         for(let i=1; i<5; i++){
             digits.push(<body> some output here </body>)
         }
+
+        digits.push(<br></br>)
+        digits.push(
+            <body style={box}>
+                <h2>Estimated Total Taxes: ${(totalFed+totalSt).toFixed(2)}</h2>
+                <h2>Take-home Income: ${(taxableIncome-totalFed-totalSt).toFixed(2)}</h2>
+            </body>
+        )
+        digits.push(<br></br>)
+
         return digits;
     }
-
-    
     
     return (
         
         <div align="center"><h2>Income Tax Calculator</h2>
         <p>Input Household Income and State.</p>
+        <body style={box}>
             <br></br>
             <div>
                 <form>
@@ -99,13 +134,14 @@ const TaxCalculator = () =>{
                     </select>
                     <br></br>
                     Total Tax Eligible Retirement Contributions: <input type="text" id = "retirement" type='number' onChange={e => setValues3(e.target.value)}/>
-                </form>   
+                    <br></br>
+                    Other Tax Deductions: <input type="text" id = "deductions" type='number' onChange={e => setValues4(e.target.value)}/>
+                </form>
             </div>
+        </body>
             <div>
                 {calcTax()}
-                {values1}
                 
-                {outValue}
             </div>
             </div>
             
