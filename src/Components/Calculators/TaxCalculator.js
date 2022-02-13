@@ -72,7 +72,7 @@ const TaxCalculator = () =>{
             case 'TN':
             case 'FL':
                 totalSt = 0;
-                digits.push(<text>No State Income Tax</text>)
+                digits.push(<text>No State Income Tax in {values1}</text>)
                 break;
             case 'OK':
             case 'AL':
@@ -80,57 +80,61 @@ const TaxCalculator = () =>{
             case 'MS':
             case 'NH':
                 totalSt = taxableIncome*.05;
-                digits.push(<text>Tax: 5%</text>)
+                digits.push(<text>{values1} Tax: 5%</text>)
                 break;
             case 'CO':
                 totalSt = taxableIncome*.0455;
-                digits.push(<text>Tax: 4.55%</text>)
+                digits.push(<text>{values1} Tax: 4.55%</text>)
                 break;
             case 'OR':
                 totalSt = taxableIncome*.099;
-                digits.push(<text>Tax: 9.90%</text>)
+                digits.push(<text>{values1} Tax: 9.90%</text>)
                 break;
             case 'CA':
                 totalSt = taxableIncome*.133;
-                digits.push(<text>Tax: 13.3%</text>)
+                digits.push(<text>{values1} Tax: 13.3%</text>)
                 break;
             case 'ID':
                 totalSt = taxableIncome*.06925;
-                digits.push(<text>Tax: 6.925%</text>)
+                digits.push(<text>{values1} Tax: 6.925%</text>)
                 break;
             case 'MT':
                 totalSt = taxableIncome*.069;
-                digits.push(<text>Tax: 6.9%</text>)
+                digits.push(<text>{values1} Tax: 6.9%</text>)
                 break;
             case 'ND':
                 totalSt = taxableIncome*.029;
-                digits.push(<text>Tax: 2.9%</text>)
+                digits.push(<text>{values1} Tax: 2.9%</text>)
                 break;
             case 'MN':
                 totalSt = taxableIncome*.0985;
-                digits.push(<text>Tax: 9.85%</text>)
+                digits.push(<text>{values1} Tax: 9.85%</text>)
                 break;
             case 'WI':
                 totalSt = taxableIncome*.0765;
-                digits.push(<text>Tax: 7.65%</text>)
+                digits.push(<text>{values1} Tax: 7.65%</text>)
                 break;
             case 'MI':
                 totalSt = taxableIncome*.0425;
-                digits.push(<text>Tax: 4.25%</text>)
+                digits.push(<text>{values1} Tax: 4.25%</text>)
                 break;
             case 'NY':
                 totalSt = taxableIncome*.0882;
-                digits.push(<text>Tax: 8.82%</text>)
+                digits.push(<text>{values1} Tax: 8.82%</text>)
                 break;
             case 'VT':
                 totalSt = taxableIncome*.0875;
-                digits.push(<text>Tax: 8.75%</text>)
+                digits.push(<text>{values1} Tax: 8.75%</text>)
                 break;
             case 'ME':
                 totalSt = taxableIncome*.0715;
-                digits.push(<text>Tax: 7.15%</text>)
+                digits.push(<text>{values1} Tax: 7.15%</text>)
                 break;
-            
+            case 'OH':
+                totalSt = taxableIncome*.04797;
+                digits.push(<text>{values1} Tax: 4.797%</text>)
+                break;
+
             default:
         }
         
