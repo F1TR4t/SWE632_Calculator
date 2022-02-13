@@ -5,6 +5,7 @@ import Temperature from "./Components/Conversion/Temperature";
 import Volume from "./Components/Conversion/Volume";
 import Speed from "./Components/Conversion/Speed";
 import Data from "./Components/Conversion/Data";
+import Calculator from "./Components/Calculator";
 import { BrowserRouter as Router,Routes, Route, Link } from 'react-router-dom';
 
 import React from "react";
@@ -26,7 +27,6 @@ function App() {
   return (
    
     <>
-    
       <div className = "App" id="outer-container">
         <Sidebar pageWrapId={'page-wrap'} outerContainerId = {'outer-container'} />
         <div><h1>Multipurpose Calculator</h1></div>
@@ -38,7 +38,8 @@ function App() {
     
     <Router>
     <Routes>
-      <Route exact path = '/' element={<Length />}></Route>
+      <Route exact path = '/' element={<Calculator />}></Route>
+      <Route exact path = '/Length' element={<Length />}></Route>
       <Route exact path = '/Mass' element={<Mass />}></Route>
       <Route exact path = '/Temperature' element={<Temperature />}></Route>
       <Route exact path = '/Volume' element={<Volume />}></Route>
