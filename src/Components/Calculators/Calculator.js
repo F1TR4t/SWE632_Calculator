@@ -58,7 +58,8 @@ const Calculator = () =>{
 			<button onClick={() => updateCalc('*')} >*</button>
 			<button onClick={() => updateCalc('+')} >+</button>
 			<button onClick={() => updateCalc('-')} >-</button>
-
+            <button onClick={() => updateCalc('(')} >(</button>
+            <button onClick={() => updateCalc(')')} >)</button>
 			<button onClick={deleteLast}>del</button>
 		    </div>
 

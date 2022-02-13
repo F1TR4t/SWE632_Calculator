@@ -23,18 +23,18 @@ import React, { useState , useEffect} from 'react';
        if(values1 === "MilesPerHour"){
            if(values2 === "KilometersPerHour"){
                const result = i * 1.6092;
-               const result1 = result.toFixed(10);
-               setoutValue(result1);
+               
+               setoutValue(result);
            }
            else if(values2 === "Knots"){
                 const result = i * 0.868974;
-                const result1 = result.toFixed(10);
-                setoutValue(result1);
+                
+                setoutValue(result);
            }
             else if(values2 === "Mach"){
                 const result = i * 0.001314;
-                const result1 = result.toFixed(10);
-                setoutValue(result1);
+                
+                setoutValue(result);
             }
            else if(values2 === "MilesPerHour"){
                setoutValue(i);
@@ -43,18 +43,18 @@ import React, { useState , useEffect} from 'react';
        else if(values1 === "KilometersPerHour"){
            if(values2 === "MilesPerHour"){
                const result = i * 0.621427;
-               const result1 = result.toFixed(10);
-               setoutValue(result1);
+               
+               setoutValue(result);
            }
            else if(values2 === "Knots"){
                 const result = i * 0.540003;
-                const result1 = result.toFixed(10);
-                setoutValue(result1);
+                
+                setoutValue(result);
             }
             else if(values2 === "Mach"){
                 const result = i * 0.000816;
-                const result1 = result.toFixed(10);
-                setoutValue(result1);
+                
+                setoutValue(result);
             }
            else if(values2 === "KilometersPerHour"){
                setoutValue(i);
@@ -63,18 +63,18 @@ import React, { useState , useEffect} from 'react';
         else if(values1 === "Knots"){
             if(values2 === "MilesPerHour"){
                 const result = i * 1.150783;
-                const result1 = result.toFixed(7);
-                setoutValue(result1);
+                
+                setoutValue(result);
             }
             else if(values2 === "KilometersPerHour"){
                 const result = i * 1.86184;
-                const result1 = result.toFixed(5);
-                setoutValue(result1);
+                
+                setoutValue(result);
             } 
             else if(values2 === "Mach"){
                 const result = i * 0.001512;
-                const result1 = result.toFixed(7);
-                setoutValue(result1);
+                
+                setoutValue(result);
             }
             else if(values2 === "Knots"){
                 setoutValue(i);
@@ -83,18 +83,18 @@ import React, { useState , useEffect} from 'react';
         else if(values1 === "Mach"){
             if(values2 === "MilesPerHour"){
                 const result = i * 761.2975;
-                const result1 = result.toFixed(7);
-                setoutValue(result1);
+                
+                setoutValue(result);
             }
             else if(values2 === "KilometersPerHour"){
                 const result = i * 1225.08;
-                const result1 = result.toFixed(4);
-                setoutValue(result1);
+                
+                setoutValue(result);
             }
             else if(values2 === "Knots"){
                 const result = i * 661.5474;
-                const result1 = result.toFixed(7);
-                setoutValue(result1);
+                
+                setoutValue(result);
             }
             else if(values2 === "Mach"){
                 setoutValue(i);
