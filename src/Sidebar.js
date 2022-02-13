@@ -8,7 +8,8 @@ import Conversion from "./Components/Conversion/Conversion";
 export default props => {
   return (
     <Menu>
-      <Conversion></Conversion>
+    <a className ="menu-item" href="/">Simple Calculator</a>
+    <Conversion></Conversion>    
     </Menu>
   );
 };
