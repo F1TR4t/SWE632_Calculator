@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 const TaxCalculator = () =>{
 
-    const [values1, setValues1] = useState('Alabama');
+    const [values1, setValues1] = useState('XX');
     const [values2, setValues2] = useState('0');
     const [values3, setValues3] = useState('0');
     const [values4, setValues4] = useState('0');
@@ -23,7 +23,10 @@ const TaxCalculator = () =>{
 
         digits.push(<h3>Federal tax calculation:</h3>)
         // calculated based on brackets from nerd wallet: https://www.nerdwallet.com/article/taxes/federal-income-tax-brackets
-        if(taxableIncome<=9950){
+        if(taxableIncome==0){
+            digits.push(<text>Tax Bracket: N/A</text>)
+        }
+        else if(taxableIncome<=9950){
             totalFed = taxableIncome*.1;
             digits.push(<text>Tax Bracket: 10%</text>)
         }
@@ -55,9 +58,85 @@ const TaxCalculator = () =>{
         digits.push(<h4>${totalFed.toFixed(2)} in Federal Taxes</h4>)
 
         digits.push(<h3>Estimated State tax calculation:</h3>)
-        for(let i=1; i<5; i++){
-            digits.push(<body> some output here </body>)
+        
+        // taxes for state estimated using diagram from: https://taxfoundation.org/publications/state-individual-income-tax-rates-and-brackets/
+        switch (values1) {
+            case 'XX':
+                digits.push(<text>Tax Bracket: N/A</text>)
+                break;
+            case 'WA':
+            case 'NV':
+            case 'WY':
+            case 'SD':
+            case 'TX':
+            case 'TN':
+            case 'FL':
+                totalSt = 0;
+                digits.push(<text>No State Income Tax</text>)
+                break;
+            case 'OK':
+            case 'AL':
+            case 'KY':
+            case 'MS':
+            case 'NH':
+                totalSt = taxableIncome*.05;
+                digits.push(<text>Tax: 5%</text>)
+                break;
+            case 'CO':
+                totalSt = taxableIncome*.0455;
+                digits.push(<text>Tax: 4.55%</text>)
+                break;
+            case 'OR':
+                totalSt = taxableIncome*.099;
+                digits.push(<text>Tax: 9.90%</text>)
+                break;
+            case 'CA':
+                totalSt = taxableIncome*.133;
+                digits.push(<text>Tax: 13.3%</text>)
+                break;
+            case 'ID':
+                totalSt = taxableIncome*.06925;
+                digits.push(<text>Tax: 6.925%</text>)
+                break;
+            case 'MT':
+                totalSt = taxableIncome*.069;
+                digits.push(<text>Tax: 6.9%</text>)
+                break;
+            case 'ND':
+                totalSt = taxableIncome*.029;
+                digits.push(<text>Tax: 2.9%</text>)
+                break;
+            case 'MN':
+                totalSt = taxableIncome*.0985;
+                digits.push(<text>Tax: 9.85%</text>)
+                break;
+            case 'WI':
+                totalSt = taxableIncome*.0765;
+                digits.push(<text>Tax: 7.65%</text>)
+                break;
+            case 'MI':
+                totalSt = taxableIncome*.0425;
+                digits.push(<text>Tax: 4.25%</text>)
+                break;
+            case 'NY':
+                totalSt = taxableIncome*.0882;
+                digits.push(<text>Tax: 8.82%</text>)
+                break;
+            case 'VT':
+                totalSt = taxableIncome*.0875;
+                digits.push(<text>Tax: 8.75%</text>)
+                break;
+            case 'ME':
+                totalSt = taxableIncome*.0715;
+                digits.push(<text>Tax: 7.15%</text>)
+                break;
+            
+            default:
         }
+        
+        
+
+        digits.push(<h4>${totalSt.toFixed(2)} in State Taxes</h4>)
 
         digits.push(<br></br>)
         digits.push(
@@ -89,6 +168,7 @@ const TaxCalculator = () =>{
                         <option value="CO">Colorado</option>
                         <option value="CT">Connecticut</option>
                         <option value="DE">Delaware</option>
+                        <option value="DC">District of Columbia</option>
                         <option value="FL">Florida</option>
                         <option value="GA">Georgia</option>
                         <option value="HI">Hawaii</option>
@@ -141,7 +221,6 @@ const TaxCalculator = () =>{
         </body>
             <div>
                 {calcTax()}
-                
             </div>
             </div>
             
