@@ -3,6 +3,7 @@ import Mass from "./Components/Conversion/Mass";
 import Temperature from "./Components/Conversion/Temperature";
 import Speed from "./Components/Conversion/Speed";
 import Calculator from "./Components/Calculators/Calculator";
+import TaxCalculator from "./Components/Calculators/TaxCalculator";
 import React from "react";
 import { BrowserRouter as Router,Routes, Route, Link } from 'react-router-dom';
 
@@ -36,12 +37,16 @@ function App() {
     <li>
     <Link to ="/Calculator">Calculator</Link>
     </li>
+    <li>
+    <Link to ="/TaxCalculator">Tax Calculator</Link>
+    </li>
     <Routes>
       <Route exact path = '/' element={<Length />}></Route>
       <Route exact path = '/Mass' element={<Mass />}></Route>
       <Route exact path = '/Temperature' element={<Temperature />}></Route>
       <Route exact path = '/Speed' element={<Speed />}></Route>
       <Route exact path = '/Calculator' element={<Calculator />}></Route>
+      <Route exact path = '/TaxCalculator' element={<TaxCalculator />}></Route>
     </Routes>
 
       </Router>
