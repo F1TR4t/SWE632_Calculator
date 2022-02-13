@@ -1,8 +1,10 @@
-import React, { useState , useEffect} from 'react';
+import React, { useState } from 'react';
 
 const TaxCalculator = () =>{
 
     const [values1, setValues1] = useState('Alabama');
+    const [values2, setValues2] = useState('0');
+    const [values3, setValues3] = useState('0');
     const[outValue, setoutValue] = useState();
     const[reValue, setReValue] = useState(0);
 
@@ -15,18 +17,34 @@ const TaxCalculator = () =>{
         }
     }
 
-    //When option of either dropdown menu changes, convert with the stored input value
-    useEffect(() => {
-        lengthConvert(reValue);}, [values1] );
+    const calcTax = () => {
+        const digits = [];
+        const totalFed = 0;
+        const totalSt = 0;
+
+        digits.push(<h5>Total taxable income: {values2-values3}</h5>)
+
+        digits.push(<h3>Federal tax calculation:</h3>)
+        for(let i=1; i<5; i++){
+            digits.push(<body> some output here </body>)
+        }
+        digits.push(<h3>Estimated State tax calculation:</h3>)
+        for(let i=1; i<5; i++){
+            digits.push(<body> some output here </body>)
+        }
+        return digits;
+    }
+
+    
     
     return (
         
         <div align="center"><h2>Income Tax Calculator</h2>
-        <p>Select Household Income and State.</p>
+        <p>Input Household Income and State.</p>
             <br></br>
             <div>
                 <form>
-                    <input type="text" id = "current state" type='number' onChange={e => lengthConvert(e.target.value)}/>
+                    <input type="text" id = "income" type='number' onChange={e => setValues2(e.target.value)}/>
                     <select id = "state" onChange={e => setValues1(e.target.value)}>
                         <option value="AL">Alabama</option>
                         <option value="AK">Alaska</option>
@@ -79,12 +97,15 @@ const TaxCalculator = () =>{
                         <option value="WI">Wisconsin</option>
                         <option value="WY">Wyoming</option>
                     </select>
+                    <br></br>
+                    Total Tax Eligible Retirement Contributions: <input type="text" id = "retirement" type='number' onChange={e => setValues3(e.target.value)}/>
                 </form>   
             </div>
-            <br></br>
             <div>
-                <input type = "text" value={outValue} readonly = "readonly"/>
-                <body>the taxes owed are: </body>
+                {calcTax()}
+                {values1}
+                
+                {outValue}
             </div>
             </div>
             
