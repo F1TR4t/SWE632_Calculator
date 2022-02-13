@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
-var currIndex = 0;
-var maxIndex = 0;
+
 
 const Scientific = () => {
     const [calc, setCalc] = useState("");
@@ -9,6 +8,19 @@ const Scientific = () => {
 
     const ops = ['/', '*', '+', '-', '.'];
 
+    const log = (x, y) => {
+        return Math.log2(x) / Math.log2(y);
+    }
+
+    const root = (x, y) => {
+        if (x < 0) {
+            setResult = NaN;
+            return;
+        }
+
+        return Math.pow(x, 1 / y);
+    }
+
     const updateCalc = value => {
         if (
             (ops.includes(value) && calc === '') ||
@@ -16,14 +28,12 @@ const Scientific = () => {
         ) {
             return;
         }
-        setCalc(calc.substring(0, currIndex) + value + calc.substring(currIndex));
+        setCalc(calc + value);
 
 
         if (!ops.includes(value)) {
             setResult(eval(calc + value).toString());
         }
-        currIndex += 1;
-        maxIndex += 1;
     }
 
     const createDigits = () => {
@@ -49,17 +59,14 @@ const Scientific = () => {
 
         const value = calc.slice(0, -1);
         setCalc(value);
-        currIndex -= 1;
-        maxIndex -= 1;
     }
 
     console.log("calc is " + calc);
-    console.log("current index is " + currIndex);
-    console.log("max index is " + maxIndex);
+   
 
     return (
         <div className="App">
-            <div className="calculator">
+            <div className="sci_calculator">
                 <div className="display">
                     {result ? <span>({result})</span> : ''}&nbsp;
                     {calc || "0"}
@@ -72,25 +79,27 @@ const Scientific = () => {
                     <button onClick={() => updateCalc('*')} >*</button>
                     <button onClick={() => updateCalc('+')} >+</button>
                     <button onClick={() => updateCalc('-')} >-</button>
-
+                    <button onClick={() => updateCalc(",")} >,</button>
+                    <button onClick={() => updateCalc('(')} >(</button>
+                    <button onClick={() => updateCalc(')')} >)</button>
                     <button onClick={deleteLast}>del</button>
 
                     
                 </div>
 
                 <div className="functions">
-                    <button >cos</button>
-                    <button >sin</button>
-                    <button >tan</button>
-                    <button >
-                        <text>x</text>
-                        <text><sup>y</sup></text>
+                    <button onClick={() => updateCalc('Math.cos(')} >cos</button>
+                    <button onClick={() => updateCalc('Math.sin(')}>sin</button>
+                    <button onClick={() => updateCalc('Math.tan(')}>tan</button>
+                    <button onClick={() => updateCalc('Math.pow(')}>
+                        x
+                        <sup>y</sup>
                     </button>
-                    <button >log
+                    <button onClick={() => updateCalc('log(')}>log
                         <sub>x</sub>
                         y
                     </button>
-                    <button >
+                    <button onClick={() => updateCalc('root(')}>
                         <sup>x</sup>
                         {"\u221A"}y
                     </button>
@@ -99,8 +108,8 @@ const Scientific = () => {
 
                 <div className="digits">
                     {createDigits()}
-                    <button onClick={() => updateCalc('0')} >0</button>
                     <button onClick={() => updateCalc('.')} >.</button>
+                    <button onClick={() => updateCalc('0')} >0</button>
 
                     <button onClick={calculate}>=</button>
                 </div>

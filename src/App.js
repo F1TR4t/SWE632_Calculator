@@ -1,12 +1,13 @@
+import React from "react";
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+
+import Calculator from "./Components/Calculators/Calculator";
+import Scientific from "./Components/Calculators/Scientific";
+
 import Length from "./Components/Conversion/Length";
 import Mass from "./Components/Conversion/Mass";
 import Temperature from "./Components/Conversion/Temperature";
 import Speed from "./Components/Conversion/Speed";
-import Calculator from "./Components/Calculators/Calculator";
-import Scientific from "./Components/Calculators/Scientific"
-import React from "react";
-import { BrowserRouter as Router,Routes, Route, Link } from 'react-router-dom';
-
 
 
 function App() {
