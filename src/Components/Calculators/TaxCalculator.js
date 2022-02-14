@@ -71,6 +71,7 @@ const TaxCalculator = () =>{
             case 'TX':
             case 'TN':
             case 'FL':
+            case 'AK':
                 totalSt = 0;
                 digits.push(<text>No State Income Tax in {values1}</text>)
                 break;
@@ -79,6 +80,7 @@ const TaxCalculator = () =>{
             case 'KY':
             case 'MS':
             case 'NH':
+            case 'MA':
                 totalSt = taxableIncome*.05;
                 digits.push(<text>{values1} Tax: 5%</text>)
                 break;
@@ -134,7 +136,96 @@ const TaxCalculator = () =>{
                 totalSt = taxableIncome*.04797;
                 digits.push(<text>{values1} Tax: 4.797%</text>)
                 break;
-
+            case 'IL':
+                totalSt = taxableIncome*.0495;
+                digits.push(<text>{values1} Tax: 4.95%</text>)
+                break;
+            case 'WV':
+                totalSt = taxableIncome*.065;
+                digits.push(<text>{values1} Tax: 6.5%</text>)
+                break;
+            case 'VA':
+            case 'GA':
+            case 'MD':
+                totalSt = taxableIncome*.0575;
+                digits.push(<text>{values1} Tax: 5.75%</text>)
+                break;
+            case 'NC':
+                totalSt = taxableIncome*.0525;
+                digits.push(<text>{values1} Tax: 5.25%</text>)
+                break;
+            case 'AZ':
+                totalSt = taxableIncome*.08;
+                digits.push(<text>{values1} Tax: 8%</text>)
+                break;
+            case 'AR':
+                totalSt = taxableIncome*.059;
+                digits.push(<text>{values1} Tax: 5.9%</text>)
+                break;
+            case 'CT':
+                totalSt = taxableIncome*.0699;
+                digits.push(<text>{values1} Tax: 6.99%</text>)
+                break;
+            case 'DE':
+                totalSt = taxableIncome*.066;
+                digits.push(<text>{values1} Tax: 6.6%</text>)
+                break;
+            case 'HI':
+                totalSt = taxableIncome*.11;
+                digits.push(<text>{values1} Tax: 11%</text>)
+                break;
+            case 'IN':
+                totalSt = taxableIncome*.0323;
+                digits.push(<text>{values1} Tax: 3.23%</text>)
+                break;
+            case 'IA':
+                totalSt = taxableIncome*.0853;
+                digits.push(<text>{values1} Tax: 8.53%</text>)
+                break;
+            case 'KS':
+                totalSt = taxableIncome*.057;
+                digits.push(<text>{values1} Tax: 5.7%</text>)
+                break;
+            case 'LA':
+                totalSt = taxableIncome*.06;
+                digits.push(<text>{values1} Tax: 6%</text>)
+                break;
+            case 'MO':
+                totalSt = taxableIncome*.054;
+                digits.push(<text>{values1} Tax: 5.4%</text>)
+                break;
+            case 'NE':
+                totalSt = taxableIncome*.0684;
+                digits.push(<text>{values1} Tax: 6.84%</text>)
+                break;
+            case 'NJ':
+                totalSt = taxableIncome*.1075;
+                digits.push(<text>{values1} Tax: 10.75%</text>)
+                break;
+            case 'NM':
+                totalSt = taxableIncome*.059;
+                digits.push(<text>{values1} Tax: 5.9%</text>)
+                break;
+            case 'PA':
+                totalSt = taxableIncome*.0307;
+                digits.push(<text>{values1} Tax: 3.07%</text>)
+                break;
+            case 'RI':
+                totalSt = taxableIncome*.0599;
+                digits.push(<text>{values1} Tax: 5.99%</text>)
+                break;
+            case 'SC':
+                totalSt = taxableIncome*.07;
+                digits.push(<text>{values1} Tax: 7%</text>)
+                break;
+            case 'UT':
+                totalSt = taxableIncome*.0495;
+                digits.push(<text>{values1} Tax: 4.95%</text>)
+                break;
+            case 'DC':
+                totalSt = taxableIncome*.0895;
+                digits.push(<text>{values1} Tax: 8.95%</text>)
+                break;
             default:
         }
         
