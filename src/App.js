@@ -3,6 +3,9 @@ import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 
 import Calculator from "./Components/Calculators/Calculator";
 import Scientific from "./Components/Calculators/Scientific";
+import TaxCalculator from "./Components/Calculators/TaxCalculator";
+
+import Sidebar from './Components/Sidebar';
 
 //imports for routing
 import Length from "./Components/Conversion/Length";
@@ -12,7 +15,6 @@ import Volume from "./Components/Conversion/Volume";
 import Speed from "./Components/Conversion/Speed";
 import Data from "./Components/Conversion/Data";
 
-import Sidebar from './Components/Sidebar';
 import './App.css';
 
  //connect component then // Dropdown menu example (2 dropdowns with actions above)
@@ -40,7 +42,7 @@ function App() {
 
     
     <Router>
-
+    
     <Routes>
       <Route exact path = '/' element={<Calculator />}></Route>
       <Route exact path = '/Length' element={<Length />}></Route>
@@ -48,8 +50,8 @@ function App() {
       <Route exact path = '/Temperature' element={<Temperature />}></Route>
       <Route exact path = '/Volume' element={<Volume />}></Route>
       <Route exact path = '/Speed' element={<Speed />}></Route>
-      <Route exact path='/Calculator' element={<Calculator />}></Route>
       <Route exact path='/Scientific' element={<Scientific />}></Route>
+      <Route exact path='/Tax' element={<TaxCalculator />}></Route>
       <Route exact path = '/Data' element={<Data />}></Route>
     </Routes>
 

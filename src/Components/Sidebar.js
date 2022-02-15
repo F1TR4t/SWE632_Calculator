@@ -10,6 +10,7 @@ export default props => {
     <Menu>
           <a className="menu-item" href="/">Simple Calculator</a>
           <a className="menu-item2" href="/Scientific">Scientific Calculator</a>
+          <a className="menu-item3" href="/Tax">Tax Calculator</a>
     <Conversion></Conversion>    
     </Menu>
   );
