@@ -247,7 +247,7 @@ const TaxCalculator = () =>{
     
     return (
         
-        <div align="center"><h2>Income Tax Calculator</h2>
+        <div align="center"><h1>Income Tax Calculator</h1>
         <p>Input Household Income and State.</p>
         <body style={box}>
             <br></br>
