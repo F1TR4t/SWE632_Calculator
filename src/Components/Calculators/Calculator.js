@@ -46,7 +46,7 @@ const Calculator = () =>{
     }
     
     return (
-    <div className="App">
+    <div className="App1">
         <div className="calculator">
             <div className="display">
                 {result ? <span>({result})</span> : ''}&nbsp;
