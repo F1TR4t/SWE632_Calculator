@@ -2,6 +2,79 @@ import React, { useState, useEffect } from 'react';
 
 
 const Scientific = () => {
+    const handleKey = (e) => {  
+        e.preventDefault();
+        if ((e.shiftKey) && e.code === 'Digit8') {
+            updateCalc('*');
+        }
+        else if ((e.shiftKey) && e.code === 'Digit9') {
+            updateCalc('(');
+        }
+        else if ((e.shiftKey) && e.code === 'Digit0') {
+            updateCalc(')');
+        }
+        else if ((e.shiftKey) && e.code === 'Equal') {
+            updateCalc('+');
+        }
+        else if (e.code === "Slash" || e.code === "Backslash" || e.code === "NumpadDivide"){
+            updateCalc('/');
+        }
+        else if (e.code === "NumpadAdd"){
+            updateCalc('+');
+        }
+        else if (e.code === "Minus"){
+            updateCalc('-');
+        }
+        else if (e.code === "Backspace"){
+            deleteLast();
+        }
+        else if (e.code === "Period"){
+            updateCalc('.');
+        }
+        else if (e.code === "Escape"){
+            clrCalc();
+        }
+        else if (e.code === "Digit0"){
+            updateCalc('0');
+        }
+        else if (e.code === "Digit1"){
+            updateCalc('1');
+        }
+        else if (e.code === "Digit2"){
+            updateCalc('2');
+        }
+        else if (e.code === "Digit3"){
+            updateCalc('3');
+        }
+        else if (e.code === "Digit4"){
+            updateCalc('4');
+        }
+        else if (e.code === "Digit5"){
+            updateCalc('5');
+        }
+        else if (e.code === "Digit6"){
+            updateCalc('6');
+        }
+        else if (e.code === "Digit7"){
+            updateCalc('7');
+        }
+        else if (e.code === "Digit8"){
+            updateCalc('8');
+        }
+        else if (e.code === "Digit9"){
+            updateCalc('9');
+        }
+        else if (e.code === "Enter" || e.code === "Equal" || e.code === "NumpadEnter" || e.code === "NumpadEqual" ){
+            calculate();
+        }
+    }
+
+    useEffect(() => {
+        document.addEventListener('keydown', handleKey)
+
+        return () => { document.removeEventListener('keydown', handleKey); };
+    })
+
     const [calc, setCalc] = useState("");
     const [result, setResult] = useState("");
     
@@ -34,6 +107,11 @@ const Scientific = () => {
         if (!ops.includes(value)) {
             setResult(eval(calc + value).toString());
         }
+    }
+
+    const clrCalc = () => {
+        setResult('0');
+        setCalc('');
     }
 
     const createDigits = () => {
@@ -84,6 +162,7 @@ const Scientific = () => {
                         <button onClick={() => updateCalc('(')} >(</button>
                         <button onClick={() => updateCalc(')')} >)</button>
                         <button onClick={deleteLast}>del</button>
+                        <button onClick={clrCalc}>clr/esc</button>
 
                         
                     </div>
