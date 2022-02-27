@@ -17,15 +17,6 @@ import Data from "./Components/Conversion/Data";
 
 import './App.css';
 
- //connect component then // Dropdown menu example (2 dropdowns with actions above)
-    //(https://www.js-tutorials.com/react-js/how-to-create-react-dropdown-select/#React_Select)
-    //Another place for dropdowns is: https://reactjs.org/docs/forms.html
-    // routed to reach different components
-     //connect component then // Dropdown menu example (2 dropdowns with actions above)
-      //(https://www.js-tutorials.com/react-js/how-to-create-react-dropdown-select/#React_Select)
-      //Another place for dropdowns is: https://reactjs.org/docs/forms.html
-      // routed to reach different components
-
       //Router/Routes is to assign routes to components
 
 function App() {
