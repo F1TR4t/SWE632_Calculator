@@ -14,6 +14,7 @@ import React, { useState , useEffect} from 'react';
     //The input value is stored when conversion happens.
     //This allows for conversion when units are changed
     const[reValue, setReValue] = useState(0);
+    const [tutValue, setTutValue] = useState('');
 
     //conversion occurs by conditionals
     //check first/top measurement, then select conversion based on second
@@ -23,46 +24,49 @@ import React, { useState , useEffect} from 'react';
        if(values1 === "Fahrenheit"){
            if(values2 === "Celsius"){
                const result = (i -32)* (5/9);
-               
                setoutValue(result);
+               setTutValue('1 fahrenheit = -17.22 celsius');
            }
            else if(values2 === "Kelvin"){
                 const result = ( i - 32) * (5/9) + 273.15;
-                
                 setoutValue(result);
+                setTutValue('1 fahrenheit = 255.92777 kelvin');
             }
            else if(values2 === "Fahrenheit"){
                setoutValue(i);
+               setTutValue('                 1 fahrenheit');
            }
        }
        else if(values1 === "Celsius"){
            if(values2 === "Fahrenheit"){
                const result = (i*(9/5))+32;
-               
                setoutValue(result);
+               setTutValue('     1 celsius = 33.8 fahrenheit');
            }
            else if(values2 === "Kelvin"){
-                const result = i + 273.15;
-                
+                const result = i + 273.15;  
                 setoutValue(result);
+                setTutValue('      1 celsius = 1273.15 kelvin');
             }
            else if(values2 === "Celsius"){
                setoutValue(i);
+               setTutValue('                 1 celsius');
            }
        }
        else if(values1 === "Kelvin"){
             if(values2 === "Fahrenheit"){
                 const result = (i - 273.15) * (9/5) + 32 ;
-                
                 setoutValue(result);
+                setTutValue('1 kelvin = -457.86999 fahrenheit');
             }
             else if(values2 === "Celsius"){
                 const result = i -273.15;
-                
                 setoutValue(result);
+                setTutValue('      1 kelvin = -272.15 celsius');
             }
             else if(values2 === "Kelvin"){
                 setoutValue(i);
+                setTutValue('                 1 kelvin');
             }
         }  
     } 
@@ -75,8 +79,14 @@ import React, { useState , useEffect} from 'react';
     const styles = {
             border: '1px solid rgba(0, 0, 0, 1.00)', 
             width: '300px',
-            height: '200px',
+            height: '240px',
        };
+
+    const conversionGuide = {
+        border: '0px',
+        background: 'transparent',
+        width: '200px',
+    };
     //render/html for Temperature Conversion
     //Two Dropdown boxes to pick measurement types
     // An input text field to enter a number (top).
@@ -88,6 +98,10 @@ import React, { useState , useEffect} from 'react';
             <body style={styles}>
             <br></br>
             <div>
+            <div> Conversion Guide
+                <input style = {conversionGuide} type = "text" value={tutValue} readonly = "readonly"/>
+            </div>
+            <br></br>
                 <form>
                     <input type="text" id = "initial temperature" type='number' onChange={e => temperatureConvert(e.target.value)}/>
                     <select id = "temperatureType1" onChange={e => setValues1(e.target.value)}>
