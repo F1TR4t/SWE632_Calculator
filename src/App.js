@@ -25,7 +25,6 @@ function App() {
     <>
       <div className = "App" id="outer-container">
         <Sidebar pageWrapId={'page-wrap'} outerContainerId = {'outer-container'} />
-        <div><h1>Multipurpose Calculator</h1></div>
       </div>
     <div>
     <div id='page-wrap'>
