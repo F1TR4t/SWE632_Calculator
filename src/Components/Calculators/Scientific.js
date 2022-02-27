@@ -65,7 +65,7 @@ const Scientific = () => {
    
 
     return (
-        <div className="App">
+        <div className="App1">
             <div className="sci_calculator">
                 <div className="display">
                     {result ? <span>({result})</span> : ''}&nbsp;
