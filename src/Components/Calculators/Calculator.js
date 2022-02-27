@@ -4,6 +4,9 @@ const Calculator = () =>{
 
     
 
+
+    
+
     const [calc, setCalc] = useState("");
     const [result, setResult] = useState("");
     
@@ -55,7 +58,6 @@ const Calculator = () =>{
         <div className="App1">
             <div className="calculator">
                 <div className="display">
-                    {result ? <span>({result})</span> : ''}&nbsp;
                     {calc || "0"}
                 </div>
                 
