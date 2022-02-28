@@ -20,6 +20,11 @@ import './App.css';
       //Router/Routes is to assign routes to components
 
 function App() {
+
+  window.onbeforeunload = function() {
+    return 'Your upload will be lost if you leave the page, are you sure?';
+  };
+
   return (
    
     <>

@@ -1,5 +1,10 @@
 import React, { useState, useEffect } from 'react';
 
+const box = {
+    border: '2px solid rgba(0, 0, 0, 1.00)', 
+    width: '700px',
+    height: '200px',
+};
 
 const Scientific = () => {
     const handleKey = (e) => {  
@@ -145,6 +150,13 @@ const Scientific = () => {
     return (
         <div align="center">
             <h1>Scientific Calculator</h1>
+            <body style={box}>
+                    <h1>Help and documentation</h1>
+                    For trig functions, format should be Math.sin(x), where x is a value inputted in radians.<br/>
+                    For the exponent function "x<sup>y</sup>", format should be Math.pow(x, y), where x and y inputted values.<br/>
+                    For the log<sub>x</sub>y function, format should be log(y, x), where x and y are inputted values.<br/>
+                    For the <sup>x</sup>{"\u221A"}y function, format should be root(y, x), where x and y are inputted values.<br/>
+            </body>
             <div className="App1">
                 <div className="sci_calculator">
                     <div className="display">

@@ -17,7 +17,7 @@ const TaxCalculator = () =>{
         const digits = [];
         var totalFed = 0;
         var totalSt = 0;
-        var taxableIncome = values2-values3-values4;
+        var taxableIncome = (values2 < 0 || values3 < 0 || values4 < 0) ? 0 : values2-values3-values4;
 
         digits.push(<h5>Total taxable income: ${taxableIncome.toFixed(2)}</h5>)
 
@@ -248,12 +248,15 @@ const TaxCalculator = () =>{
     return (
         
         <div align="center"><h1>Income Tax Calculator</h1>
-        <p>Input Household Income and State.</p>
+        
         <body style={box}>
             <br></br>
             <div>
                 <form>
+                    Input Household Income:
                     <input type="text" id = "income" type='number' onChange={e => setValues2(e.target.value)}/>
+                    <br/>
+                    Select State of Residence:
                     <select id = "state" onChange={e => setValues1(e.target.value)}>
                         <option value="AL">Alabama</option>
                         <option value="AK">Alaska</option>
@@ -311,6 +314,8 @@ const TaxCalculator = () =>{
                     Total Tax Eligible Retirement Contributions: <input type="text" id = "retirement" type='number' onChange={e => setValues3(e.target.value)}/>
                     <br></br>
                     Other Tax Deductions: <input type="text" id = "deductions" type='number' onChange={e => setValues4(e.target.value)}/>
+                    <br/>
+                    <b>Note: There should not be any negative values inputted.</b>
                 </form>
             </div>
         </body>
