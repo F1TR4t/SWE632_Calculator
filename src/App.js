@@ -31,6 +31,7 @@ function App() {
       <div className = "App" id="outer-container">
         <Sidebar pageWrapId={'page-wrap'} outerContainerId = {'outer-container'} />
       </div>
+     <h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Menu</h3>
     <div>
     <div id='page-wrap'>
     
