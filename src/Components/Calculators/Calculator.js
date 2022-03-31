@@ -80,6 +80,13 @@ const Calculator = () =>{
     const ops = ['/', '*', '+', '-', '.'];
     
     const updateCalc = value => {
+
+        if ( value === '.' && 
+            ( calc === '' || ops.includes(calc.slice(-1)) )
+        ) {
+            setCalc(calc+"0"+value);
+        }
+
         if(
             (ops.includes(value) && calc === '') ||
             (ops.includes(value) && ops.includes(calc.slice(-1)))
