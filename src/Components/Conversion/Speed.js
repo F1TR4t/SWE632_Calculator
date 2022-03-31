@@ -118,6 +118,7 @@ import React, { useState , useEffect} from 'react';
             border: '1px solid rgba(0, 0, 0, 1.00)', 
             width: '400px',
             height: '240px',
+            background:'white',
        };
        const conversionGuide = {
         border: '0px',
