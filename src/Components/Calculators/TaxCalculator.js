@@ -11,6 +11,7 @@ const TaxCalculator = () =>{
         border: '2px solid rgba(0, 0, 0, 1.00)', 
         width: '500px',
         height: '120px',
+        background: 'white',
     };
 
     const calcTax = () => {
