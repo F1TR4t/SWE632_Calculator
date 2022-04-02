@@ -1,52 +1,57 @@
+import React from "react";
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+
+import Calculator from "./Components/Calculators/Calculator";
+import Scientific from "./Components/Calculators/Scientific";
+import TaxCalculator from "./Components/Calculators/TaxCalculator";
+
+import Sidebar from './Components/Sidebar';
+
+//imports for routing
 import Length from "./Components/Conversion/Length";
 import Mass from "./Components/Conversion/Mass";
 import Temperature from "./Components/Conversion/Temperature";
+import Volume from "./Components/Conversion/Volume";
 import Speed from "./Components/Conversion/Speed";
-import Calculator from "./Components/Calculators/Calculator";
-import TaxCalculator from "./Components/Calculators/TaxCalculator";
-import React from "react";
-import { BrowserRouter as Router,Routes, Route, Link } from 'react-router-dom';
+import Data from "./Components/Conversion/Data";
 
+import './App.css';
 
+      //Router/Routes is to assign routes to components
 
 function App() {
+
+  window.onbeforeunload = function() {
+    return 'Your upload will be lost if you leave the page, are you sure?';
+  };
+
   return (
-    //connect component then // Dropdown menu example (2 dropdowns with actions above)
-    //(https://www.js-tutorials.com/react-js/how-to-create-react-dropdown-select/#React_Select)
-    //Another place for dropdowns is: https://reactjs.org/docs/forms.html
-    // routed to reach different components
-     //connect component then // Dropdown menu example (2 dropdowns with actions above)
-      //(https://www.js-tutorials.com/react-js/how-to-create-react-dropdown-select/#React_Select)
-      //Another place for dropdowns is: https://reactjs.org/docs/forms.html
-      // routed to reach different components
+   
     <>
-    <div>Conversions
+      <div className = "App" id="outer-container">
+        <Sidebar pageWrapId={'page-wrap'} outerContainerId = {'outer-container'} />
+      </div>
+      <br />
+      <br />
+      <br />
+     <h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Menu</h3>
+
+    <div id='page-wrap'>
+    
+
+    
     <Router>
-    <li>
-    <Link to ="/">Length</Link>
-    </li>
-    <li>
-    <Link to = "/Mass">Mass/Weight</Link>
-    </li>
-    <li>
-    <Link to = "/Temperature">Temperature</Link>
-    </li>
-    <li>
-    <Link to = "/Speed">Speed</Link>
-    </li>
-    <li>
-    <Link to ="/Calculator">Calculator</Link>
-    </li>
-    <li>
-    <Link to ="/TaxCalculator">Tax Calculator</Link>
-    </li>
+    
     <Routes>
-      <Route exact path = '/' element={<Length />}></Route>
+      <Route exact path = '/' element={<Calculator />}></Route>
+      <Route exact path = '/Length' element={<Length />}></Route>
       <Route exact path = '/Mass' element={<Mass />}></Route>
       <Route exact path = '/Temperature' element={<Temperature />}></Route>
+      <Route exact path = '/Volume' element={<Volume />}></Route>
       <Route exact path = '/Speed' element={<Speed />}></Route>
-      <Route exact path = '/Calculator' element={<Calculator />}></Route>
-      <Route exact path = '/TaxCalculator' element={<TaxCalculator />}></Route>
+      <Route exact path='/Scientific' element={<Scientific />}></Route>
+      <Route exact path='/Tax' element={<TaxCalculator />}></Route>
+      <Route exact path = '/Data' element={<Data />}></Route>
     </Routes>
 
       </Router>
