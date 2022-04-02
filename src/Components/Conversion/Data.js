@@ -267,7 +267,7 @@ import React, { useState , useEffect} from 'react';
             </div>
             <br></br>
                 <form>
-                    <input type="text" id = "initial data" type='number' onChange={e => dataConvert(e.target.value)}/>
+                    <input id = "initial data" type='number' onChange={e => dataConvert(e.target.value)}/>
                     <select id = "dataType1" onChange={e => setValues1(e.target.value)}>
                         <option value="Bytes">Bytes</option>
                         <option value ="Bits">Bits</option>
