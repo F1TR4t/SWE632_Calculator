@@ -1,4 +1,3 @@
-/*menu icon*/
 .bm-burger-button {
     position: fixed;
     width: 50px;
@@ -29,7 +28,6 @@
     height: 100%;
   }
   
-  /*menu itself*/
   .bm-menu {
     background: #5d6383;
     padding: 2.5em 1.5em 0;
@@ -41,58 +39,11 @@
     padding: 0.8em;
   }
   
-  /*Menu options above Conversions*/
   .bm-item {
     display: inline-block;
-    color: rgb(4, 252, 99);
-    text-decoration: none;
-  }
-  .bm-item:hover {
-    color: #fd0505;
   }
   
-  /*Options under "Conversion" dropdown menu*/
-  .dropdown-options {
-    display: none;
-    width: 100%;
+  .bm-overlay {
+    background: rgba(0, 0, 0, 0.3);
   }
-
-  .dropdown-options a {
-    display: block;
-    color: rgb(4, 252, 99);
-    padding: 5px;
-    text-decoration: none;
-  }
-  .dropdown-options a:hover {
-    color: #fd0505;
-  }
-
-  /*The "Conversions" menu option*/
-  .dbutton{
-    background: none;
-    border: none;
-    padding: 0;
-    /*text-decoration: underline;*/
-    color: rgb(248, 248, 248);
-    position: relative;
-  }
-
-  /*The arrow next to "Conversion" menu option*/
-  .dbutton:before {
-    content: "";
-    position: absolute;
-    left: 112px;
-    top: 8px;
-    width: 0; 
-    height: 0; 
-    border-left: 10px solid transparent;
-    border-right: 10px solid transparent;
-    border-top: 10px solid rgb(255, 255, 255);
-}
-
-.dbutton:hover {
-  color: #fe0202;
-}
-
-/*this is used to help toggle dropdown menu*/
-.show{display:block;}
+  

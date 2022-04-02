@@ -23,28 +23,28 @@ import React, { useState , useEffect} from 'react';
        if(values1 === "Pounds"){
            if(values2 === "Grams"){
                const result = i * 453.59237;
-               const result1 = result.toFixed(10);
-               setoutValue(result1);
+               
+               setoutValue(result);
            }
            else if(values2 === "Milligrams"){
-                const result = i * 453592.37
-                const result1 = result.toFixed(10);
-                setoutValue(result1);
+                const result = i * 453592.37;
+                
+                setoutValue(result);
            }
            else if(values2 === "Ounces"){
                 const result = i * 16;
-                const result1 = result.toFixed(10);
-                setoutValue(result1);
+                
+                setoutValue(result);
             }
            else if(values2 === "MetricTonnes"){
                 const result = i * 0.00045359;
-                const result1 = result.toFixed(10);
-                setoutValue(result1);
+                
+                setoutValue(result);
             }
             else if(values2 === "Kilograms"){
                 const result = i * 0.45359237;
-                const result1 = result.toFixed(10);
-                setoutValue(result1);
+                
+                setoutValue(result);
             }
            else if(values2 === "Pounds"){
                setoutValue(i);
@@ -53,28 +53,28 @@ import React, { useState , useEffect} from 'react';
        else if(values1 === "Grams"){
            if(values2 === "Pounds"){
                const result = i * 0.00220462;
-               const result1 = result.toFixed(10);
-               setoutValue(result1);
+               
+               setoutValue(result);
            }
            else if(values2 === "Ounces"){
                 const result = i * 0.03527396;
-                const result1 = result.toFixed(10);
-                setoutValue(result1);
+                
+                setoutValue(result);
             }
            else if(values2 === "Milligrams"){
                 const result = i * 1000;
-                const result1 = result.toFixed(10);
-                setoutValue(result1);
+                
+                setoutValue(result);
             }
             else if(values2 === "MetricTonnes"){
                 const result = i * 0.000001;
-                const result1 = result.toFixed(10);
-                setoutValue(result1);
+                
+                setoutValue(result);
             }
             else if(values2 === "Kilograms"){
                 const result = i * 0.001;
-                const result1 = result.toFixed(10);
-                setoutValue(result1);
+                
+                setoutValue(result);
             }
            else if(values2 === "Grams"){
                setoutValue(i);
@@ -83,28 +83,28 @@ import React, { useState , useEffect} from 'react';
        else if(values1 === "Ounces"){
             if(values2 === "Pounds"){
                 const result = i * 0.0625;
-                const result1 = result.toFixed(10);
-                setoutValue(result1);
+                
+                setoutValue(result);
             }
             else if(values2 === "Grams"){
                 const result = i * 28.3495231;
-                const result1 = result.toFixed(10);
-                setoutValue(result1);
+                
+                setoutValue(result);
             }
             else if(values2 === "Milligrams"){
                 const result = i * 28349.5231;
-                const result1 = result.toFixed(10);
-                setoutValue(result1);
+                
+                setoutValue(result);
             }
             else if(values2 === "MetricTonnes"){
                 const result = i * 0.00002835;
-                const result1 = result.toFixed(10);
-                setoutValue(result1);
+                
+                setoutValue(result);
             }  
             else if(values2 === "Kilograms"){
                 const result = i * 0.02834952;
-                const result1 = result.toFixed(10);
-                setoutValue(result1);
+                
+                setoutValue(result);
             }
             else if(values2 === "Ounces"){
                 setoutValue(i);
@@ -113,28 +113,28 @@ import React, { useState , useEffect} from 'react';
         else if(values1 === "MetricTonnes"){
             if(values2 === "Pounds"){
                 const result = i * 2204.62262;
-                const result1 = result.toFixed(10);
-                setoutValue(result1);
+                
+                setoutValue(result);
             }
             else if(values2 === "Grams"){
                 const result = i * 1000000;
-                const result1 = result.toFixed(10);
-                setoutValue(result1);
+                
+                setoutValue(result);
             }
             else if(values2 === "Milligrams"){
                 const result = i * 1000000000;
-                const result1 = result.toFixed(10);
-                setoutValue(result1);
+                
+                setoutValue(result);
             }
             else if(values2 === "Ounces"){
                 const result = i * 35273.962;
-                const result1 = result.toFixed(10);
-                setoutValue(result1);
+                
+                setoutValue(result);
             }  
             else if(values2 === "Kilograms"){
                 const result = i * 1000;
-                const result1 = result.toFixed(10);
-                setoutValue(result1);
+                
+                setoutValue(result);
             }
             else if(values2 === "MetricTonnes"){
                 setoutValue(i);
@@ -143,28 +143,28 @@ import React, { useState , useEffect} from 'react';
         else if(values1 === "Milligrams"){
             if(values2 === "Pounds"){
                 const result = i * 0.0000022;
-                const result1 = result.toFixed(7);
-                setoutValue(result1);
+                
+                setoutValue(result);
             }
             else if(values2 === "Grams"){
                 const result = i * 0.001;
-                const result1 = result.toFixed(5);
-                setoutValue(result1);
+                
+                setoutValue(result);
             }
             else if(values2 === "MetricTonnes"){
                 const result = i * 0.0000000001;
-                const result1 = result.toFixed(12);
-                setoutValue(result1);
+                
+                setoutValue(result);
             }
             else if(values2 === "Ounces"){
                 const result = i * 0.00003527;
-                const result1 = result.toFixed(8);
-                setoutValue(result1);
+                
+                setoutValue(result);
             }  
             else if(values2 === "Kilograms"){
                 const result = i * 0.000001;
-                const result1 = result.toFixed(7);
-                setoutValue(result1);
+                
+                setoutValue(result);
             }
             else if(values2 === "Milligrams"){
                 setoutValue(i);
@@ -173,28 +173,28 @@ import React, { useState , useEffect} from 'react';
         else if(values1 === "Kilograms"){
             if(values2 === "Pounds"){
                 const result = i * 2.20462262;
-                const result1 = result.toFixed(7);
-                setoutValue(result1);
+                
+                setoutValue(result);
             }
             else if(values2 === "Grams"){
                 const result = i * 1000;
-                const result1 = result.toFixed(4);
-                setoutValue(result1);
+                
+                setoutValue(result);
             }
             else if(values2 === "MetricTonnes"){
                 const result = i * 0.001;
-                const result1 = result.toFixed(4);
-                setoutValue(result1);
+                
+                setoutValue(result);
             }
             else if(values2 === "Ounces"){
                 const result = i * 35.273962;
-                const result1 = result.toFixed(8);
-                setoutValue(result1);
+                
+                setoutValue(result);
             }  
             else if(values2 === "Milligrams"){
                 const result = i * 1000000;
-                const result1 = result.toFixed(7);
-                setoutValue(result1);
+                
+                setoutValue(result);
             }
             else if(values2 === "Kilograms"){
                 setoutValue(i);
@@ -210,16 +210,8 @@ import React, { useState , useEffect} from 'react';
     const styles = {
             border: '1px solid rgba(0, 0, 0, 1.00)', 
             width: '300px',
-            height: '230px',
-            background:'#fde6d1',
-        };
- 
-        const conversionGuide = {
-         border: '0px',
-         background: 'transparent',
-         width: '350px',
-     };
-     
+            height: '200px',
+       };
     //render/html for Mass Conversion
     //Two Dropdown boxes to pick measurement types
     // An input text field to enter a number (top).
@@ -232,14 +224,14 @@ import React, { useState , useEffect} from 'react';
             <br></br>
             <div>
                 <form>
-                    <input id = "initial mass" type='number' onChange={e => massConvert(e.target.value)}/>
+                    <input type="text" id = "initial mass" type='number' onChange={e => massConvert(e.target.value)}/>
                     <select id = "massType1" onChange={e => setValues1(e.target.value)}>
                         <option value="Pounds">Pounds</option>
                         <option value ="Ounces">Ounces</option>
                         <option value ="Milligrams">Milligrams</option>
                         <option value ="MetricTonnes">Metric Tonnes</option>
                         <option value ="Grams">Grams</option>
-                        <option value ="Kilograms">Kilometer</option>
+                        <option value ="Kilograms">Kilograms</option>
                         
                     </select>
                 </form>   
@@ -255,7 +247,7 @@ import React, { useState , useEffect} from 'react';
                     <option value ="Ounces">Ounces</option>
                     <option value ="Milligrams">Milligrams</option>
                     <option value ="MetricTonnes">Metric Tonnes</option>
-                    <option value ="Kilograms">Kilometer</option>
+                    <option value ="Kilograms">Kilograms</option>
                 </select>
             </div>
             <br></br>

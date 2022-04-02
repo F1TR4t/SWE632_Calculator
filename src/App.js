@@ -17,25 +17,26 @@ import Data from "./Components/Conversion/Data";
 
 import './App.css';
 
+ //connect component then // Dropdown menu example (2 dropdowns with actions above)
+    //(https://www.js-tutorials.com/react-js/how-to-create-react-dropdown-select/#React_Select)
+    //Another place for dropdowns is: https://reactjs.org/docs/forms.html
+    // routed to reach different components
+     //connect component then // Dropdown menu example (2 dropdowns with actions above)
+      //(https://www.js-tutorials.com/react-js/how-to-create-react-dropdown-select/#React_Select)
+      //Another place for dropdowns is: https://reactjs.org/docs/forms.html
+      // routed to reach different components
+
       //Router/Routes is to assign routes to components
 
 function App() {
-
-  window.onbeforeunload = function() {
-    return 'Your upload will be lost if you leave the page, are you sure?';
-  };
-
   return (
    
     <>
       <div className = "App" id="outer-container">
         <Sidebar pageWrapId={'page-wrap'} outerContainerId = {'outer-container'} />
+        <div><h1>Multipurpose Calculator</h1></div>
       </div>
-      <br />
-      <br />
-      <br />
-     <h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Menu</h3>
-
+    <div>
     <div id='page-wrap'>
     
 
@@ -56,6 +57,7 @@ function App() {
 
       </Router>
       </div>
+    </div>
       </>
   );
 }
