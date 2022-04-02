@@ -210,7 +210,12 @@ import React, { useState , useEffect} from 'react';
     const styles = {
             border: '1px solid rgba(0, 0, 0, 1.00)', 
             width: '300px',
+<<<<<<< Updated upstream
             height: '200px',
+=======
+            height: '230px',
+            background:'#fde6d1',
+>>>>>>> Stashed changes
        };
     //render/html for Length Conversion
     //Two Dropdown boxes to pick measurement types
