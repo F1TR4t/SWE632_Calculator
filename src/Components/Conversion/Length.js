@@ -23,24 +23,28 @@ import React, { useState , useEffect} from 'react';
        if(values1 === "Feet"){
            if(values2 === "Meters"){
                const result = i * 0.3048;
-               setoutValue(result);
+               const result1 = result.toFixed(4);
+               setoutValue(result1);
            }
            else if(values2 === "Millimeters"){
                 const result = i * 304.8;
-                setoutValue(result);
+                const result1 = result.toFixed(4);
+                setoutValue(result1);
            }
            else if(values2 === "Inches"){
                 const result = i * 12;
-                setoutValue(result);
+                const result1 = result.toFixed(4);
+                setoutValue(result1);
             }
            else if(values2 === "Centimeters"){
                 const result = i * 30.48;
-                setoutValue(result);
+                const result1 = result.toFixed(4);
+                setoutValue(result1);
             }
             else if(values2 === "Kilometers"){
                 const result = i * 0.0003048;
-                
-                setoutValue(result);
+                const result1 = result.toFixed(6);
+                setoutValue(result1);
             }
            else if(values2 === "Feet"){
                setoutValue(i);
@@ -49,28 +53,28 @@ import React, { useState , useEffect} from 'react';
        else if(values1 === "Meters"){
            if(values2 === "Feet"){
                const result = i * 3.2808399;
-               
-               setoutValue(result);
+               const result1 = result.toFixed(4);
+               setoutValue(result1);
            }
            else if(values2 === "Inches"){
                 const result = i * 39.3700787;
-                
-                setoutValue(result);
+                const result1 = result.toFixed(4);
+                setoutValue(result1);
             }
            else if(values2 === "Millimeters"){
                 const result = i * 1000;
-                
-                setoutValue(result);
+                const result1 = result.toFixed(4);
+                setoutValue(result1);
             }
             else if(values2 === "Centimeters"){
                 const result = i * 100;
-                
-                setoutValue(result);
+                const result1 = result.toFixed(4);
+                setoutValue(result1);
             }
             else if(values2 === "Kilometers"){
                 const result = i * 0.001;
-                
-                setoutValue(result);
+                const result1 = result.toFixed(4);
+                setoutValue(result1);
             }
            else if(values2 === "Meters"){
                setoutValue(i);
@@ -79,28 +83,28 @@ import React, { useState , useEffect} from 'react';
        else if(values1 === "Inches"){
             if(values2 === "Feet"){
                 const result = i * 0.08333333;
-                
-                setoutValue(result);
+                const result1 = result.toFixed(4);
+                setoutValue(result1);
             }
             else if(values2 === "Meters"){
                 const result = i * 0.0254;
-                
-                setoutValue(result);
+                const result1 = result.toFixed(4);
+                setoutValue(result1);
             }
             else if(values2 === "Millimeters"){
                 const result = i * 25.4;
-                
-                setoutValue(result);
+                const result1 = result.toFixed(4);
+                setoutValue(result1);
             }
             else if(values2 === "Centimeters"){
                 const result = i * 2.54;
-                
-                setoutValue(result);
+                const result1 = result.toFixed(4);
+                setoutValue(result1);
             }  
             else if(values2 === "Kilometers"){
                 const result = i * 0.0000254;
-                
-                setoutValue(result);
+                const result1 = result.toFixed(7);
+                setoutValue(result1);
             }
             else if(values2 === "Inches"){
                 setoutValue(i);
@@ -109,28 +113,28 @@ import React, { useState , useEffect} from 'react';
         else if(values1 === "Centimeters"){
             if(values2 === "Feet"){
                 const result = i * 0.0328084;
-                
-                setoutValue(result);
+                const result1 = result.toFixed(7);
+                setoutValue(result1);
             }
             else if(values2 === "Meters"){
                 const result = i * 0.01;
-                
-                setoutValue(result);
+                const result1 = result.toFixed(4);
+                setoutValue(result1);
             }
             else if(values2 === "Millimeters"){
                 const result = i * 10;
-                
-                setoutValue(result);
+                const result1 = result.toFixed(4);
+                setoutValue(result1);
             }
             else if(values2 === "Inches"){
                 const result = i * 0.39370079;
-                
-                setoutValue(result);
+                const result1 = result.toFixed(8);
+                setoutValue(result1);
             }  
             else if(values2 === "Kilometers"){
                 const result = i * 0.00001;
-                
-                setoutValue(result);
+                const result1 = result.toFixed(7);
+                setoutValue(result1);
             }
             else if(values2 === "Centimeters"){
                 setoutValue(i);
@@ -139,28 +143,28 @@ import React, { useState , useEffect} from 'react';
         else if(values1 === "Millimeters"){
             if(values2 === "Feet"){
                 const result = i * 0.00328084;
-                
-                setoutValue(result);
+                const result1 = result.toFixed(7);
+                setoutValue(result1);
             }
             else if(values2 === "Meters"){
                 const result = i * 0.001;
-                
-                setoutValue(result);
+                const result1 = result.toFixed(5);
+                setoutValue(result1);
             }
             else if(values2 === "Centimeters"){
                 const result = i * 0.1;
-                
-                setoutValue(result);
+                const result1 = result.toFixed(4);
+                setoutValue(result1);
             }
             else if(values2 === "Inches"){
                 const result = i * 0.03937008;
-                
-                setoutValue(result);
+                const result1 = result.toFixed(8);
+                setoutValue(result1);
             }  
             else if(values2 === "Kilometers"){
                 const result = i * 0.000001;
-                
-                setoutValue(result);
+                const result1 = result.toFixed(7);
+                setoutValue(result1);
             }
             else if(values2 === "Millimeters"){
                 setoutValue(i);
@@ -169,28 +173,28 @@ import React, { useState , useEffect} from 'react';
         else if(values1 === "Kilometers"){
             if(values2 === "Feet"){
                 const result = i * 3280.8399;
-                
-                setoutValue(result);
+                const result1 = result.toFixed(7);
+                setoutValue(result1);
             }
             else if(values2 === "Meters"){
                 const result = i * 1000;
-                
-                setoutValue(result);
+                const result1 = result.toFixed(4);
+                setoutValue(result1);
             }
             else if(values2 === "Centimeters"){
                 const result = i * 100000;
-                
-                setoutValue(result);
+                const result1 = result.toFixed(4);
+                setoutValue(result1);
             }
             else if(values2 === "Inches"){
                 const result = i * 39370.0787;
-                
-                setoutValue(result);
+                const result1 = result.toFixed(8);
+                setoutValue(result1);
             }  
             else if(values2 === "Millimeters"){
                 const result = i * 1000000;
-                
-                setoutValue(result);
+                const result1 = result.toFixed(7);
+                setoutValue(result1);
             }
             else if(values2 === "Kilometers"){
                 setoutValue(i);
@@ -206,7 +210,8 @@ import React, { useState , useEffect} from 'react';
     const styles = {
             border: '1px solid rgba(0, 0, 0, 1.00)', 
             width: '300px',
-            height: '200px',
+            height: '230px',
+            background:'#fde6d1',
        };
     //render/html for Length Conversion
     //Two Dropdown boxes to pick measurement types
@@ -220,7 +225,7 @@ import React, { useState , useEffect} from 'react';
             <br></br>
             <div>
                 <form>
-                    <input type="text" id = "initial length" type='number' onChange={e => lengthConvert(e.target.value)}/>
+                    <input id = "initial length" type='number' onChange={e => lengthConvert(e.target.value)}/>
                     <select id = "lengthType1" onChange={e => setValues1(e.target.value)}>
                         <option value="Feet">Feet</option>
                         <option value ="Inches">Inches</option>

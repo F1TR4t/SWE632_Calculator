@@ -11,6 +11,7 @@ const TaxCalculator = () =>{
         border: '2px solid rgba(0, 0, 0, 1.00)', 
         width: '500px',
         height: '120px',
+        background: '#fde6d1',
     };
 
     const calcTax = () => {
@@ -253,7 +254,7 @@ const TaxCalculator = () =>{
             <br></br>
             <div>
                 <form>
-                    <input type="text" id = "income" type='number' onChange={e => setValues2(e.target.value)}/>
+                    <input id = "income" type='number' onChange={e => setValues2(e.target.value)}/>
                     <select id = "state" onChange={e => setValues1(e.target.value)}>
                         <option value="AL">Alabama</option>
                         <option value="AK">Alaska</option>
@@ -308,9 +309,9 @@ const TaxCalculator = () =>{
                         <option value="WY">Wyoming</option>
                     </select>
                     <br></br>
-                    Total Tax Eligible Retirement Contributions: <input type="text" id = "retirement" type='number' onChange={e => setValues3(e.target.value)}/>
+                    Total Tax Eligible Retirement Contributions: <input id = "retirement" type='number' onChange={e => setValues3(e.target.value)}/>
                     <br></br>
-                    Other Tax Deductions: <input type="text" id = "deductions" type='number' onChange={e => setValues4(e.target.value)}/>
+                    Other Tax Deductions: <input id = "deductions" type='number' onChange={e => setValues4(e.target.value)}/>
                 </form>
             </div>
         </body>
