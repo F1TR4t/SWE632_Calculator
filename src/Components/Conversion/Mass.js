@@ -232,7 +232,7 @@ import React, { useState , useEffect} from 'react';
             <br></br>
             <div>
                 <form>
-                    <input type="text" id = "initial mass" type='number' onChange={e => massConvert(e.target.value)}/>
+                    <input id = "initial mass" type='number' onChange={e => massConvert(e.target.value)}/>
                     <select id = "massType1" onChange={e => setValues1(e.target.value)}>
                         <option value="Pounds">Pounds</option>
                         <option value ="Ounces">Ounces</option>
