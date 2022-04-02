@@ -11,10 +11,7 @@ const TaxCalculator = () =>{
         border: '2px solid rgba(0, 0, 0, 1.00)', 
         width: '500px',
         height: '120px',
-<<<<<<< Updated upstream
-=======
         background: '#fde6d1',
->>>>>>> Stashed changes
     };
 
     const calcTax = () => {
