@@ -90,7 +90,7 @@ import React, { useState , useEffect} from 'react';
             <br></br>
             <div>
                 <form>
-                    <input type="text" id = "initial temperature" type='number' onChange={e => temperatureConvert(e.target.value)}/>
+                    <input id = "initial temperature" type='number' onChange={e => temperatureConvert(e.target.value)}/>
                     <select id = "temperatureType1" onChange={e => setValues1(e.target.value)}>
                         <option value="Fahrenheit">Fahrenheit</option>
                         <option value ="Kelvin">Kelvin</option>
