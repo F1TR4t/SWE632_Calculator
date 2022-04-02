@@ -566,7 +566,7 @@ import React, { useState , useEffect} from 'react';
             </div>
             <br></br>
                 <form>
-                    <input type="text" id = "initial volume" type='number' onChange={e => volumeConvert(e.target.value)}/>
+                    <input id = "initial volume" type='number' onChange={e => volumeConvert(e.target.value)}/>
                     <select id = "volumeType1" onChange={e => setValues1(e.target.value)}>
                         <option value="Cups">Cups</option>
                         <option value ="Quarts">Quarts</option>
