@@ -125,7 +125,7 @@ import React, { useState , useEffect} from 'react';
             <br></br>
             <div>
                 <form>
-                    <input type="text" id = "initial speed" type='number' onChange={e => speedConvert(e.target.value)}/>
+                    <input id = "initial speed" type='number' onChange={e => speedConvert(e.target.value)}/>
                     <select id = "speedType1" onChange={e => setValues1(e.target.value)}>
                         <option value="MilesPerHour">MilesPerHour</option>
                         <option value ="Knots">Knots</option>
