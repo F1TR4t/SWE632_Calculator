@@ -225,7 +225,7 @@ import React, { useState , useEffect} from 'react';
             <br></br>
             <div>
                 <form>
-                    <input type="text" id = "initial length" type='number' onChange={e => lengthConvert(e.target.value)}/>
+                    <input id = "initial length" type='number' onChange={e => lengthConvert(e.target.value)}/>
                     <select id = "lengthType1" onChange={e => setValues1(e.target.value)}>
                         <option value="Feet">Feet</option>
                         <option value ="Inches">Inches</option>
