@@ -14,7 +14,8 @@ import React, { useState , useEffect} from 'react';
     //The input value is stored when conversion happens.
     //This allows for conversion when units are changed
     const[reValue, setReValue] = useState(0);
-
+    const [tutValue, setTutValue] = useState('');
+    
     //conversion occurs by conditionals
     //check first/top measurement, then select conversion based on second
     //setoutValue sets the result which automatically appears in the bottom textbox
@@ -23,81 +24,87 @@ import React, { useState , useEffect} from 'react';
        if(values1 === "MilesPerHour"){
            if(values2 === "KilometersPerHour"){
                const result = i * 1.6092;
-               const result1 = result.toFixed(10);
-               setoutValue(result1);
+               setoutValue(result);
+               setTutValue('1 mile per hour = 1.6092 kilometers per hour');
+
            }
            else if(values2 === "Knots"){
                 const result = i * 0.868974;
-                const result1 = result.toFixed(10);
-                setoutValue(result1);
+                setoutValue(result);
+                setTutValue('1 mile per hour = 0.868974 knots');
            }
             else if(values2 === "Mach"){
                 const result = i * 0.001314;
-                const result1 = result.toFixed(10);
-                setoutValue(result1);
+                setoutValue(result);
+                setTutValue('1 mile per hour = 0.001314 machs');
             }
            else if(values2 === "MilesPerHour"){
                setoutValue(i);
+               setTutValue('             1 mile per hour');
            }
        }
        else if(values1 === "KilometersPerHour"){
            if(values2 === "MilesPerHour"){
                const result = i * 0.621427;
-               const result1 = result.toFixed(10);
-               setoutValue(result1);
+               setoutValue(result);
+               setTutValue('1 kilometer per hour = 0.621427 miles per hour');
            }
            else if(values2 === "Knots"){
                 const result = i * 0.540003;
-                const result1 = result.toFixed(10);
-                setoutValue(result1);
+                setoutValue(result);
+                setTutValue('1 kilometer per hour = 0.540003 knots');
             }
             else if(values2 === "Mach"){
                 const result = i * 0.000816;
-                const result1 = result.toFixed(10);
-                setoutValue(result1);
+                setoutValue(result);
+                setTutValue('1 kilometer per hour = 0.000816 mach');
             }
            else if(values2 === "KilometersPerHour"){
                setoutValue(i);
+               setTutValue('          1 kilometer per hour');
+
            }
        }
         else if(values1 === "Knots"){
             if(values2 === "MilesPerHour"){
                 const result = i * 1.150783;
-                const result1 = result.toFixed(7);
-                setoutValue(result1);
+                setoutValue(result);
+                setTutValue('1 knot = 1.150783 miles per hour');
             }
             else if(values2 === "KilometersPerHour"){
                 const result = i * 1.86184;
-                const result1 = result.toFixed(5);
-                setoutValue(result1);
+                setoutValue(result);
+                setTutValue('1 knot = 1.86184 kilometers per hour');
             } 
             else if(values2 === "Mach"){
                 const result = i * 0.001512;
-                const result1 = result.toFixed(7);
-                setoutValue(result1);
+                setoutValue(result);
+                setTutValue('1 knot = 0.001512 machs');
             }
             else if(values2 === "Knots"){
                 setoutValue(i);
+                setTutValue('                   1 knots');
             }
         }
         else if(values1 === "Mach"){
             if(values2 === "MilesPerHour"){
                 const result = i * 761.2975;
-                const result1 = result.toFixed(7);
-                setoutValue(result1);
+                setoutValue(result);
+                setTutValue('    1 mach = 761.2975 miles per hour');
             }
             else if(values2 === "KilometersPerHour"){
                 const result = i * 1225.08;
-                const result1 = result.toFixed(4);
-                setoutValue(result1);
+                setoutValue(result);
+                setTutValue('1 mach = 1225.08 kilometers per hour');
             }
             else if(values2 === "Knots"){
                 const result = i * 661.5474;
-                const result1 = result.toFixed(7);
-                setoutValue(result1);
+                setoutValue(result);
+                setTutValue('1 mach = 661.5474 knots');
             }
             else if(values2 === "Mach"){
                 setoutValue(i);
+                setTutValue('                        1 mach');
             }
         }  
     } 
@@ -113,6 +120,11 @@ import React, { useState , useEffect} from 'react';
             height: '240px',
             background:'#fde6d1',
        };
+       const conversionGuide = {
+        border: '0px',
+        background: 'transparent',
+        width: '240px',
+    };
     //render/html for Speed Conversion
     //Two Dropdown boxes to pick measurement types
     // An input text field to enter a number (top).
@@ -124,8 +136,13 @@ import React, { useState , useEffect} from 'react';
             <body style={styles}>
             <br></br>
             <div>
+            <div> Conversion Guide
+                <br></br>
+                <input style = {conversionGuide} type = "text" value={tutValue} readonly = "readonly"/>
+            </div>
+            <br></br>
                 <form>
-                    <input id = "initial speed" type='number' onChange={e => speedConvert(e.target.value)}/>
+                    <input  id = "initial speed" type='number' onChange={e => speedConvert(e.target.value)}/>
                     <select id = "speedType1" onChange={e => setValues1(e.target.value)}>
                         <option value="MilesPerHour">MilesPerHour</option>
                         <option value ="Knots">Knots</option>
