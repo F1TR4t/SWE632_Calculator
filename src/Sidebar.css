@@ -1,10 +1,10 @@
-/*menu icon*/
+/*menu icon left and top are for change the position of icon on page*/
 .bm-burger-button {
     position: fixed;
-    width: 50px;
-    height: 40px;
-    left: 36px;
-    top: 36px;
+    width: 80px;
+    height: 70px;
+    left: 25px;
+    top: 45px;
   }
   
   .bm-burger-bars {

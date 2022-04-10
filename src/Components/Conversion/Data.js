@@ -13,7 +13,7 @@ import React, { useState , useEffect} from 'react';
     const[outValue, setoutValue] = useState();
     //The input value is stored when conversion happens.
     //This allows for conversion when units are changed
-    const[reValue, setReValue] = useState(0);
+    const[reValue, setReValue] = useState(1);
     const [tutValue, setTutValue] = useState('');
 
     //conversion occurs by conditionals
@@ -239,13 +239,13 @@ import React, { useState , useEffect} from 'react';
         dataConvert(reValue);}, [values1, values2] );
     
     //Add border around conversion inputs. Adjust border from here
-    const styles = {
-            border: '1px solid rgba(0, 0, 0, 1.00)', 
-            width: '300px',
-            height: '230px',
-            background:'#fde6d1',
-       };
-
+       const styles = {
+        border: '1px solid rgba(0, 0, 0, 1.00)', 
+        width: '300px',
+        height: '290px',
+        background:'#fde6d1',
+        fontSize:'18px',
+   };
        const conversionGuide = {
         border: '0px',
         background: 'transparent',
@@ -255,36 +255,34 @@ import React, { useState , useEffect} from 'react';
     //Two Dropdown boxes to pick measurement types
     // An input text field to enter a number (top).
     // An input text field that outputs converted result (readonly/noneditable)
+    
     return (
         
         <><div align="center"><h2>Data Conversion</h2>
-        <p>Select units and enter a number.</p>
+        <p> Enter a number and select units</p>
             <body style={styles}>
             <br></br>
             <div>
             <div> Conversion Guide
                 <input style = {conversionGuide} type = "text" value={tutValue} readonly = "readonly"/>
             </div>
-            <br></br>
+            <br></br>  
                 <form>
-                    <input id = "initial data" type='number' onChange={e => dataConvert(e.target.value)}/>
-                    <select id = "dataType1" onChange={e => setValues1(e.target.value)}>
+                    <input id = "initial-data" type='number' style={{fontSize:'20px'}} ref={(input) => {input && input.focus()}}  value = {reValue} placeholder= '0.0' onChange={e => dataConvert(e.target.value)}/>
+                    <select id = "dataType1" style={{fontSize:'20px'}} onChange={e => setValues1(e.target.value)}>
                         <option value="Bytes">Bytes</option>
                         <option value ="Bits">Bits</option>
                         <option value ="Kilobytes">Kilobytes</option>
                         <option value ="Megabytes">Megabytes</option>
                         <option value ="Gigabytes">Gigabytes</option>    
                         <option value ="Terabytes">Terabytes</option>
-                        
                     </select>
                 </form>   
             </div>
-            <br></br>
             <p> &nbsp; to &nbsp; </p>
-            <br></br>
             <div>
-                <input type = "text" value={outValue} readonly = "readonly"/>
-                <select id = "dataType2" onChange={e => {setValues2(e.target.value)}}>
+                <input type = "text" style={{fontSize:'20px'}} value={outValue} readonly = "readonly"/>
+                <select id = "dataType2" style={{fontSize:'20px'}} onChange={e => {setValues2(e.target.value)}}>
                     <option value ="Bits">Bits</option>
                     <option value="Bytes">Bytes</option>
                     <option value ="Kilobytes">Kilobytes</option>
