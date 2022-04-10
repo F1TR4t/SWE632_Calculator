@@ -83,7 +83,6 @@ const Scientific = () => {
     })
 
     const [calc, setCalc] = useState("");
-    const [result, setResult] = useState("");
     
 
     const ops = ['/', '*', '+', '-', '.'];
@@ -94,7 +93,6 @@ const Scientific = () => {
 
     const root = (x, y) => {
         if (x < 0) {
-            setResult = NaN;
             return;
         }
 
@@ -116,15 +114,9 @@ const Scientific = () => {
             return;
         }
         setCalc(calc + value);
-
-
-        if (!ops.includes(value)) {
-            setResult(eval(calc + value).toString());
-        }
     }
 
     const clrCalc = () => {
-        setResult('0');
         setCalc('');
     }
 
@@ -141,11 +133,15 @@ const Scientific = () => {
     }
 
     const calculate = () => {
-        setCalc(eval(calc).toString())
+        try {
+            setCalc(eval(calc).toString())
+        } catch (error) {
+            setCalc("Error")
+        }
     }
 
     const deleteLast = () => {
-        if (calc == '') {
+        if (calc === '') {
             return;
         }
 
@@ -170,32 +166,32 @@ const Scientific = () => {
                         <tr>
                             <td><b>cos</b></td>
                             <td><b>Math.cos(x)</b> where x is a value inputted in radians.</td>
-                            <td>cos(2) -> Math.cos(2)</td>
+                            <td>cos(2) -{'>'} Math.cos(2)</td>
                         </tr>
                         <tr>
                             <td><b>sin</b></td>
                             <td><b>Math.sin(x)</b> where x is a value inputted in radians.</td>
-                            <td>sin(4) -> Math.sin(4)</td>
+                            <td>sin(4) -{'>'} Math.sin(4)</td>
                         </tr>
                         <tr>
                             <td><b>tan</b></td>
                             <td><b>Math.tan(x)</b> where x is a value inputted in radians.</td>
-                            <td>tan(5) -> Math.tan(2)</td>
+                            <td>tan(5) -{'>'} Math.tan(2)</td>
                         </tr>
                         <tr>
                             <td><b>x<sup>y</sup></b></td>
                             <td><b>Math.pow(x, y)</b>, where x and y inputted values.</td>
-                            <td>6<sup>2</sup> -> Math.pow(6,2)</td>
+                            <td>6<sup>2</sup> -{'>'} Math.pow(6,2)</td>
                         </tr>
                         <tr>
                             <td><b>log<sub>x</sub>y</b></td>
                             <td><b>log(y, x)</b>, where x and y are inputted values.</td>
-                            <td>log<sub>2</sub>4 -> log(4,2)</td>
+                            <td>log<sub>2</sub>4 -{'>'} log(4,2)</td>
                         </tr>
                         <tr>
                             <td><b><sup>x</sup>{"\u221A"}y </b></td>
                             <td><b>root(y, x)</b>, where x and y are inputted values.</td>
-                            <td><sup>3</sup>{"\u221A"}9 -> root(9,3)</td>
+                            <td><sup>3</sup>{"\u221A"}9 -{'>'} root(9,3)</td>
                         </tr>
                     </table>
                     
