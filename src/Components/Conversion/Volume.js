@@ -13,7 +13,7 @@ import React, { useState , useEffect} from 'react';
     const[outValue, setoutValue] = useState();
     //The input value is stored when conversion happens.
     //This allows for conversion when units are changed
-    const[reValue, setReValue] = useState(0);
+    const[reValue, setReValue] = useState(1);
     const [tutValue, setTutValue] = useState('');
 
     //conversion occurs by conditionals
@@ -541,8 +541,9 @@ import React, { useState , useEffect} from 'react';
     const styles = {
             border: '1px solid rgba(0, 0, 0, 1.00)', 
             width: '300px',
-           height: '230px',
+           height: '280px',
            background:'#fde6d1',
+           fontSize:'18px',
        };
 
        const conversionGuide = {
@@ -557,7 +558,7 @@ import React, { useState , useEffect} from 'react';
     return (
         
         <><div align="center"><h2>Volume Conversion</h2>
-        <p>Select units and enter a number.</p>
+        <p> Enter a number and select units</p>
             <body style={styles}>
             <br></br>
             <div>
@@ -566,8 +567,8 @@ import React, { useState , useEffect} from 'react';
             </div>
             <br></br>
                 <form>
-                    <input id = "initial volume" type='number' onChange={e => volumeConvert(e.target.value)}/>
-                    <select id = "volumeType1" onChange={e => setValues1(e.target.value)}>
+                    <input id = "initial volume" type='number' style={{fontSize:'20px'}} ref={(input) => {input && input.focus()}}  value = {reValue} placeholder= '0.0' onChange={e => volumeConvert(e.target.value)}/>
+                    <select id = "volumeType1" style={{fontSize:'20px'}} onChange={e => setValues1(e.target.value)}>
                         <option value="Cups">Cups</option>
                         <option value ="Quarts">Quarts</option>
                         <option value ="Milliliters">Milliliters</option>
@@ -582,12 +583,10 @@ import React, { useState , useEffect} from 'react';
                     </select>
                 </form>   
             </div>
-            <br></br>
             <p> &nbsp; to &nbsp; </p>
-            <br></br>
             <div>
-                <input type = "text" value={outValue} readonly = "readonly"/>
-                <select id = "volumeType2" onChange={e => {setValues2(e.target.value)}}>
+                <input type = "text" value={outValue} style={{fontSize:'20px'}} readonly = "readonly"/>
+                <select id = "volumeType2" style={{fontSize:'20px'}} onChange={e => {setValues2(e.target.value)}}>
                     <option value ="Liters">Liters</option>
                     <option value="Cups">Cups</option>
                     <option value ="Quarts">Quarts</option>
