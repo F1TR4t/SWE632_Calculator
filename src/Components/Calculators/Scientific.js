@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Tooltip } from '@mui/material';
 
 const box = {
     border: '2px solid rgba(0, 0, 0, 1.00)', 
@@ -219,44 +220,76 @@ const Scientific = () => {
                     
 
                     <div className="operators">
+                    <Tooltip title="Division opeartor; WARNING: Do not divide by 0" arrow>
                         <button onClick={() => updateCalc('/')} >/</button>
+                    </Tooltip>
+                    <Tooltip title="Multiplication operator" arrow>
                         <button onClick={() => updateCalc('*')} >*</button>
+                    </Tooltip>
+                    <Tooltip title="Addition operator" arrow>
                         <button onClick={() => updateCalc('+')} >+</button>
+                    </Tooltip>
+                    <Tooltip title="Subtraction and negation operator; Add before a number to negate" arrow>
                         <button onClick={() => updateCalc('-')} >-</button>
-                        <button onClick={() => updateCalc(",")} >,</button>
+                    </Tooltip>
+                    <Tooltip title="Opening Parenthesis" arrow>
                         <button onClick={() => updateCalc('(')} >(</button>
+                    </Tooltip>
+                    <Tooltip title="Closing Parenthesis" arrow>
                         <button onClick={() => updateCalc(')')} >)</button>
+                    </Tooltip>
+                    <Tooltip title="Delete last character" arrow>
                         <button onClick={deleteLast}>del</button>
+                    </Tooltip>
+                    <Tooltip title="Clear calculator" arrow>
                         <button onClick={clrCalc}>clr/esc</button>
+                    </Tooltip>
 
                         
                     </div>
 
                     <div className="functions">
-                        <button onClick={() => updateCalc('Math.cos(')} >cos</button>
-                        <button onClick={() => updateCalc('Math.sin(')}>sin</button>
-                        <button onClick={() => updateCalc('Math.tan(')}>tan</button>
-                        <button onClick={() => updateCalc('Math.pow(')}>
-                            x
-                            <sup>y</sup>
-                        </button>
-                        <button onClick={() => updateCalc('log(')}>log
-                            <sub>x</sub>
-                            y
-                        </button>
-                        <button onClick={() => updateCalc('root(')}>
-                            <sup>x</sup>
-                            {"\u221A"}y
-                        </button>
+                        <Tooltip title="Cosine function; Math.cos(x) where x is in radians" arrow>
+                            <button onClick={() => updateCalc('Math.cos(')} >cos</button>
+                        </Tooltip>
+                        <Tooltip title="Sine function; Math.sin(x) where x is in radians" arrow>
+                            <button onClick={() => updateCalc('Math.sin(')}>sin</button>
+                        </Tooltip>
+                        <Tooltip title="Tangent function; Math.tan(x) where x is in radians" arrow>
+                            <button onClick={() => updateCalc('Math.tan(')}>tan</button>
+                        </Tooltip>
+                        <Tooltip title="Exponent function; Math.pow(x, y), where x is the value and y is the exponent" arrow>
+                            <button onClick={() => updateCalc('Math.pow(')}>
+                                x
+                                <sup>y</sup>
+                            </button>
+                        </Tooltip>
+                        <Tooltip title="Lograthmic function; log(y, x), where y is the value and x is the log base" arrow>
+                            <button onClick={() => updateCalc('log(')}>log
+                                <sub>x</sub>
+                                y
+                            </button>
+                        </Tooltip>
+                        <Tooltip title="Root function; root(y, x), where y is the value and x is the root power" arrow>
+                            <button onClick={() => updateCalc('root(')}>
+                                <sup>x</sup>
+                                {"\u221A"}y
+                            </button>
+                        </Tooltip>
                     </div>
 
 
                     <div className="digits">
                         {createDigits()}
-                        <button onClick={() => updateCalc('.')} >.</button>
+
+                        <Tooltip title="Place a decimal" arrow>
+                            <button onClick={() => updateCalc('.')} >.</button>
+                        </Tooltip>
                         <button onClick={() => updateCalc('0')} >0</button>
 
-                        <button onClick={calculate}>=</button>
+                        <Tooltip title="Calculate equation" arrow>
+                            <button onClick={calculate}>=</button>
+                        </Tooltip>
                     </div>
                 </div>
             </div>
