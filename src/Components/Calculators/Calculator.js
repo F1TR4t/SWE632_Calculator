@@ -75,7 +75,6 @@ const Calculator = () =>{
     })
 
     const [calc, setCalc] = useState("");
-    const [result, setResult] = useState("");
     
     const ops = ['/', '*', '+', '-', '.'];
     
@@ -87,6 +86,12 @@ const Calculator = () =>{
             setCalc(calc+"0"+value);
         }
 
+        if ( value === '-' && 
+            ( calc === '' || ops.includes(calc.slice(-1)) )
+        ) {
+            setCalc(calc+value);
+        }
+
         if(
             (ops.includes(value) && calc === '') ||
             (ops.includes(value) && ops.includes(calc.slice(-1)))
@@ -94,14 +99,9 @@ const Calculator = () =>{
             return;
         }
         setCalc(calc+value);
-        
-        if(!ops.includes(value)){
-            setResult(eval(calc+value).toString());
-        }
     }
 
     const clrCalc = () => {
-        setResult('0');
         setCalc('');
     }
     
@@ -118,11 +118,15 @@ const Calculator = () =>{
     }
     
     const calculate = () => {
-        setCalc(eval(calc).toString())
+        try {
+            setCalc(eval(calc).toString())
+        } catch (error) {
+            setCalc('Error')
+        }
     }
     
     const deleteLast = () => {
-        if (calc== ''){
+        if (calc === ''){
             return;
         }
         
