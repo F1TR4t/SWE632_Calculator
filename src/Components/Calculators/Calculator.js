@@ -1,4 +1,5 @@
 import {useState, useEffect} from 'react';
+import { Tooltip } from '@mui/material';
 
 const Calculator = () =>{
     const handleKey = (e) => {  
@@ -145,22 +146,41 @@ const Calculator = () =>{
                 </div>
                 
                 <div className="operators">
-                <button onClick={() => updateCalc('/')} >/</button>
-                <button onClick={() => updateCalc('*')} >*</button>
-                <button onClick={() => updateCalc('+')} >+</button>
-                <button onClick={() => updateCalc('-')} >-</button>
-                <button onClick={() => updateCalc('(')} >(</button>
-                <button onClick={() => updateCalc(')')} >)</button>
-                <button onClick={deleteLast}>del</button>
-                <button onClick={clrCalc}>clr/esc</button>
+                    <Tooltip title="Division opeartor; WARNING: Do not divide by 0" arrow>
+                        <button onClick={() => updateCalc('/')} >/</button>
+                    </Tooltip>
+                    <Tooltip title="Multiplication operator" arrow>
+                        <button onClick={() => updateCalc('*')} >*</button>
+                    </Tooltip>
+                    <Tooltip title="Addition operator" arrow>
+                        <button onClick={() => updateCalc('+')} >+</button>
+                    </Tooltip>
+                    <Tooltip title="Subtraction and negation operator; Add before a number to negate" arrow>
+                        <button onClick={() => updateCalc('-')} >-</button>
+                    </Tooltip>
+                    <Tooltip title="Opening Parenthesis" arrow>
+                        <button onClick={() => updateCalc('(')} >(</button>
+                    </Tooltip>
+                    <Tooltip title="Closing Parenthesis" arrow>
+                        <button onClick={() => updateCalc(')')} >)</button>
+                    </Tooltip>
+                    <Tooltip title="Delete last character" arrow>
+                        <button onClick={deleteLast}>del</button>
+                    </Tooltip>
+                    <Tooltip title="Clear calculator" arrow>
+                        <button onClick={clrCalc}>clr/esc</button>
+                    </Tooltip>
                 </div>
 
             <div className="digits">
                 {createDigits()}
                 <button onClick={() => updateCalc('0')} >0</button>
-                <button onClick={() => updateCalc('.')} >.</button>
-
-                <button onClick={calculate}>=</button>
+                <Tooltip title="Place a decimal" arrow>
+                    <button onClick={() => updateCalc('.')} >.</button>
+                </Tooltip>
+                <Tooltip title="Calculate equation" arrow>
+                    <button onClick={calculate}>=</button>
+                </Tooltip>
             </div>
             </div>
         </div>
