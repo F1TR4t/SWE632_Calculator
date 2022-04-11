@@ -1,4 +1,4 @@
-import React, { useState , useEffect} from 'react';
+import React, { useState , useEffect, useCallback} from 'react';
 
 //This component for conversion can be reused/expanded for other measurements
 //Currently do not know how to route between two components from a dropdown menu
@@ -19,7 +19,7 @@ import React, { useState , useEffect} from 'react';
     //conversion occurs by conditionals
     //check first/top measurement, then select conversion based on second
     //setoutValue sets the result which automatically appears in the bottom textbox
-    const lengthConvert = (i) =>{
+    const lengthConvert = useCallback((i) =>{
         setReValue(i);
        if(values1 === "Feet"){
            if(values2 === "Meters"){
@@ -207,11 +207,11 @@ import React, { useState , useEffect} from 'react';
                 setTutValue('                    1 kilometer');
             }
         }  
-    } 
+    }, [values1, values2]);
 
     //When option of either dropdown menu changes, convert with the stored input value
     useEffect(() => {
-        lengthConvert(reValue);}, [values1, values2] );
+        lengthConvert(reValue);}, [reValue, lengthConvert, values1, values2] );
     
     //Add border around conversion inputs. Adjust border from here
     const styles = {

@@ -1,7 +1,4 @@
-import React, { useState , useEffect} from 'react';
-
-//This component for conversion can be reused/expanded for other measurements
-//Currently do not know how to route between two components from a dropdown menu
+import React, { useState , useEffect, useCallback} from 'react';
 
   const Temperature = () =>{
     //the unit types are represented by these. Intial units set.
@@ -19,7 +16,7 @@ import React, { useState , useEffect} from 'react';
     //conversion occurs by conditionals
     //check first/top measurement, then select conversion based on second
     //setoutValue sets the result which automatically appears in the bottom textbox
-    const temperatureConvert = (i) =>{
+    const temperatureConvert = useCallback((i) =>{
         setReValue(i);
        if(values1 === "Fahrenheit"){
            if(values2 === "Celsius"){
@@ -69,11 +66,11 @@ import React, { useState , useEffect} from 'react';
                 setTutValue('                 1 kelvin');
             }
         }  
-    } 
+    }, [values1, values2]);
 
     //When option of either dropdown menu changes, convert with the stored input value
     useEffect(() => {
-        temperatureConvert(reValue);}, [values1, values2] );
+        temperatureConvert(reValue);}, [reValue, values1, values2, temperatureConvert] );
     
     //Add border around conversion inputs. Adjust border from here
     const styles = {

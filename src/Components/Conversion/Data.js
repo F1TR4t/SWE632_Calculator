@@ -1,4 +1,4 @@
-import React, { useState , useEffect} from 'react';
+import React, { useState , useEffect, useCallback} from 'react';
 
 //This component for conversion can be reused/expanded for other measurements
 //Currently do not know how to route between two components from a dropdown menu
@@ -19,14 +19,13 @@ import React, { useState , useEffect} from 'react';
     //conversion occurs by conditionals
     //check first/top measurement, then select conversion based on second
     //setoutValue sets the result which automatically appears in the bottom textbox
-    const dataConvert = (i) =>{
+    const dataConvert = useCallback((i) =>{
         setReValue(i);
        if(values1 === "Bytes"){
            if(values2 === "Bits"){
                const result = i * 8;
                setoutValue(result);
                setTutValue('                            1 byte = 8 bits');
-
            }
            else if(values2 === "Gigabytes"){
                 const result = i * 0.000000001;
@@ -42,7 +41,6 @@ import React, { useState , useEffect} from 'react';
                 const result = i * 0.000001;
                 setoutValue(result);
                 setTutValue('             1 byte = 0.000001 megabytes');
-
             }
             else if(values2 === "Terabytes"){
                 const result = i * 0.000000000001;
@@ -52,7 +50,6 @@ import React, { useState , useEffect} from 'react';
            else if(values2 === "Bytes"){
                setoutValue(i);
                setTutValue('                                     1 byte');
-
            }
        }
        else if(values1 === "Bits"){
@@ -102,24 +99,20 @@ import React, { useState , useEffect} from 'react';
                 const result = i * 0.000001;
                 setoutValue(result);
                 setTutValue('             1 kilobyte = 0.000001 gigabytes');
-
             }
             else if(values2 === "Megabytes"){
                 const result = i * 0.001;
                 setoutValue(result);
                 setTutValue('                   1 kilobyte = 0.001 megabytes');
-
             }  
             else if(values2 === "Terabytes"){
                 const result = i * 0.000000001;
                 setoutValue(result);
                 setTutValue('             1 kilobyte = 0.000000001 terabytes');
-
             }
             else if(values2 === "Kilobytes"){
                 setoutValue(i);
                 setTutValue('                                 1 kilobyte');
-
             }
         }
         else if(values1 === "Megabytes"){
@@ -127,36 +120,30 @@ import React, { useState , useEffect} from 'react';
                 const result = i * 1000000;
                 setoutValue(result);
                 setTutValue('             1 megabytes = 1000000 bytes');
-
             }
             else if(values2 === "Bits"){
                 const result = i * 8000000;
                 setoutValue(result);
                 setTutValue('                   1 megabyte = 8000000 bits');
-
             }
             else if(values2 === "Gigabytes"){
                 const result = i * 0.001;
                 setoutValue(result);
                 setTutValue('                  1 megabyte = 0.001 gigabytes');
-
             }
             else if(values2 === "Kilobytes"){
                 const result = i * 1000;
                 setoutValue(result);
                 setTutValue('             1 megabyte = 1000 kilobytes');
-
             }  
             else if(values2 === "Terabytes"){
                 const result = i * 0.000001;
                 setoutValue(result);
                 setTutValue('             1 megabyte = 0.000001 terabytes');
-
             }
             else if(values2 === "Megabytes"){
                 setoutValue(i);
                 setTutValue('                             1 megabyte');
-
             }
         }
         else if(values1 === "Gigabytes"){
@@ -164,7 +151,6 @@ import React, { useState , useEffect} from 'react';
                 const result = i * 1000000000;
                 setoutValue(result);
                 setTutValue('                1 gigabytes = 1000000000 bytes');
-
             }
             else if(values2 === "Bits"){
                 const result = i * 8000000000;
@@ -176,24 +162,20 @@ import React, { useState , useEffect} from 'react';
                 const result = i * 1000;
                 setoutValue(result);
                 setTutValue('             1 gigabyte = 1000 Megabytes');
-
             }
             else if(values2 === "Kilobytes"){
                 const result = i * 1000000;
                 setoutValue(result);
                 setTutValue('                1 gigabyte = 1000000 Kilobytes');
-
             }  
             else if(values2 === "Terabytes"){
                 const result = i * 0.001;
                 setoutValue(result);
                 setTutValue('                  1 gigabyte = 0.001 terabytes');
-
             }
             else if(values2 === "Gigabytes"){
                 setoutValue(i);
                 setTutValue('                                  1 gigabyte');
-
             }
         }
         else if(values1 === "Terabytes"){
@@ -201,7 +183,6 @@ import React, { useState , useEffect} from 'react';
                 const result = i * 1000000000000;
                 setoutValue(result);
                 setTutValue('             1 terabyte = 1000000000000 bytes');
-
             }
             else if(values2 === "Bits"){
                 const result = i * 8000000000000;                
@@ -232,11 +213,11 @@ import React, { useState , useEffect} from 'react';
                 setTutValue('                                  1 terabyte');
             }
         }  
-    } 
+    }, [values1, values2]);
 
     //When option of either dropdown menu changes, convert with the stored input value
     useEffect(() => {
-        dataConvert(reValue);}, [values1, values2] );
+        dataConvert(reValue);}, [reValue, dataConvert, values1, values2] );
     
     //Add border around conversion inputs. Adjust border from here
        const styles = {
@@ -250,12 +231,7 @@ import React, { useState , useEffect} from 'react';
         border: '0px',
         background: 'transparent',
         width: '300px',
-    };
-    //render/html for Data Conversion
-    //Two Dropdown boxes to pick measurement types
-    // An input text field to enter a number (top).
-    // An input text field that outputs converted result (readonly/noneditable)
-    
+    };  
     return (
         
         <><div align="center"><h2>Data Conversion</h2>

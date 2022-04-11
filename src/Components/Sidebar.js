@@ -5,7 +5,7 @@ import Conversion from "./Conversion/Conversion";
 
 //This and Sidebar.css are modified from tutorial here: https://www.digitalocean.com/community/tutorials/react-react-burger-menu-sidebar
 
-export default props => {
+const Sidebar = () => {
   return (
     <Menu>
           <a className="menu-item" href="/">Simple Calculator</a>
@@ -15,3 +15,4 @@ export default props => {
     </Menu>
   );
 };
+export default Sidebar;

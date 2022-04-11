@@ -1,4 +1,4 @@
-import React, { useState , useEffect} from 'react';
+import React, { useState , useEffect, useCallback} from 'react';
 
 //This component for conversion can be reused/expanded for other measurements
 //Currently do not know how to route between two components from a dropdown menu
@@ -19,7 +19,7 @@ import React, { useState , useEffect} from 'react';
     //conversion occurs by conditionals
     //check first/top measurement, then select conversion based on second
     //setoutValue sets the result which automatically appears in the bottom textbox
-    const massConvert = (i) =>{
+    const massConvert = useCallback((i) =>{
         setReValue(i);
        if(values1 === "Pounds"){
            if(values2 === "Grams"){
@@ -206,12 +206,12 @@ import React, { useState , useEffect} from 'react';
                 setoutValue(i);
                 setTutValue('                             1 kilogram');
             }
-        }  
-    } 
+        }
+    }, [values1, values2]);
 
     //When option of either dropdown menu changes, convert with the stored input value
     useEffect(() => {
-        massConvert(reValue);}, [values1, values2] );
+        massConvert(reValue);}, [reValue, massConvert, values1, values2] );
     
     //Add border around conversion inputs. Adjust border from here
     const styles = {

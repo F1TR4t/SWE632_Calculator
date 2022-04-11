@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 
 import Calculator from "./Components/Calculators/Calculator";
 import Scientific from "./Components/Calculators/Scientific";
@@ -16,30 +16,22 @@ import Speed from "./Components/Conversion/Speed";
 import Data from "./Components/Conversion/Data";
 
 import './App.css';
-
-      //Router/Routes is to assign routes to components
+  //Router/Routes is to assign routes to components
 
 function App() {
-
   window.onbeforeunload = function() {
     return 'Your upload will be lost if you leave the page, are you sure?';
   };
 
   return (
-   
     <>
       <div className = "App" id="outer-container">
         <Sidebar pageWrapId={'page-wrap'} outerContainerId = {'outer-container'} />
       </div>
-     
      <h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Menu</h3>
-
     <div id='page-wrap'>
-    
-
-    
-    <Router>
-    
+     
+    <Router> 
     <Routes>
       <Route exact path = '/' element={<Calculator />}></Route>
       <Route exact path = '/Length' element={<Length />}></Route>
@@ -51,10 +43,9 @@ function App() {
       <Route exact path='/Tax' element={<TaxCalculator />}></Route>
       <Route exact path = '/Data' element={<Data />}></Route>
     </Routes>
-
-      </Router>
-      </div>
-      </>
+    </Router>
+    </div>
+    </>
   );
 }
 export default App;

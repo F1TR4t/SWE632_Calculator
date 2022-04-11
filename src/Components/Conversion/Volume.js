@@ -1,7 +1,4 @@
-import React, { useState , useEffect} from 'react';
-
-//This component for conversion can be reused/expanded for other measurements
-//Currently do not know how to route between two components from a dropdown menu
+import React, { useState , useEffect, useCallback} from 'react';
 
   const Volume = () =>{
     //the unit types are represented by these. Intial units set.
@@ -19,7 +16,7 @@ import React, { useState , useEffect} from 'react';
     //conversion occurs by conditionals
     //check first/top measurement, then select conversion based on second
     //setoutValue sets the result which automatically appears in the bottom textbox
-    const volumeConvert = (i) =>{
+    const volumeConvert = useCallback((i) =>{
         setReValue(i);
        if(values1 === "Cups"){
            if(values2 === "Liters"){
@@ -531,11 +528,11 @@ import React, { useState , useEffect} from 'react';
                 setTutValue('                             1 fluid ounce');
             }
         }  
-    } 
+    }, [values1, values2]);
 
     //When option of either dropdown menu changes, convert with the stored input value
     useEffect(() => {
-        volumeConvert(reValue);}, [values1, values2] );
+        volumeConvert(reValue);}, [reValue, values1, values2, volumeConvert] );
     
     //Add border around conversion inputs. Adjust border from here
     const styles = {
