@@ -1,5 +1,6 @@
 import {useState, useEffect} from 'react';
 import { Tooltip } from '@mui/material';
+import { borderRadius } from '@mui/system';
 
 const Calculator = () =>{
     const handleKey = (e) => {  
@@ -76,6 +77,7 @@ const Calculator = () =>{
     })
 
     const [calc, setCalc] = useState("");
+    const [lastStep, setLastStep] = useState("N/A");
     
     const ops = ['/', '*', '+', '-', '.'];
     
@@ -102,8 +104,16 @@ const Calculator = () =>{
         setCalc(calc+value);
     }
 
+    const undo = () => {
+        if(lastStep!="N/A"){
+            setCalc(lastStep);
+            setLastStep("N/A");
+        }
+    }
+
     const clrCalc = () => {
         setCalc('');
+        setLastStep('N/A');
     }
     
     const createDigits = () => {
@@ -120,7 +130,8 @@ const Calculator = () =>{
     
     const calculate = () => {
         try {
-            setCalc(eval(calc).toString())
+            setLastStep(calc);
+            setCalc(eval(calc).toString());
         } catch (error) {
             setCalc('Error')
         }
@@ -172,17 +183,22 @@ const Calculator = () =>{
                     </Tooltip>
                 </div>
 
-            <div className="digits">
-                {createDigits()}
-                <button onClick={() => updateCalc('0')} >0</button>
-                <Tooltip title="Place a decimal" arrow>
-                    <button onClick={() => updateCalc('.')} >.</button>
-                </Tooltip>
-                <Tooltip title="Calculate equation" arrow>
-                    <button onClick={calculate}>=</button>
-                </Tooltip>
+                <div className="digits">
+                    {createDigits()}
+                    <button onClick={() => updateCalc('0')} >0</button>
+                    <Tooltip title="Place a decimal" arrow>
+                        <button onClick={() => updateCalc('.')} >.</button>
+                    </Tooltip>
+                    <Tooltip title="Calculate equation" arrow>
+                        <button onClick={calculate}>=</button>
+                    </Tooltip>
+                </div>
             </div>
-            </div>
+        </div>
+        <div>
+            <h3>Last Entered Calculation:</h3>
+            <p>{lastStep}</p>
+            <button style={{backgroundColor: "navy", borderRadius: "20%"}} onClick={undo}>Undo Last</button>
         </div>
     </div>
     );

@@ -24,7 +24,7 @@ const TaxCalculator = () =>{
 
         digits.push(<h3>Federal tax calculation:</h3>)
         // calculated based on brackets from nerd wallet: https://www.nerdwallet.com/article/taxes/federal-income-tax-brackets
-        if(taxableIncome==0){
+        if(taxableIncome===0){
             digits.push(<text>Tax Bracket: N/A</text>)
         }
         else if(taxableIncome<=9950){

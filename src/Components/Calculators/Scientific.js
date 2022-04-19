@@ -84,6 +84,7 @@ const Scientific = () => {
     })
 
     const [calc, setCalc] = useState("");
+    const [lastStep, setLastStep] = useState("N/A");
     
 
     const ops = ['/', '*', '+', '-', '.'];
@@ -117,8 +118,16 @@ const Scientific = () => {
         setCalc(calc + value);
     }
 
+    const undo = () => {
+        if(lastStep!="N/A"){
+            setCalc(lastStep);
+            setLastStep("N/A");
+        }
+    }
+
     const clrCalc = () => {
         setCalc('');
+        setLastStep('N/A');
     }
 
     const createDigits = () => {
@@ -135,7 +144,8 @@ const Scientific = () => {
 
     const calculate = () => {
         try {
-            setCalc(eval(calc).toString())
+            setLastStep(calc);
+            setCalc(eval(calc).toString());
         } catch (error) {
             setCalc("Error")
         }
@@ -228,6 +238,9 @@ const Scientific = () => {
                     <Tooltip title="Subtraction and negation operator; Add before a number to negate" arrow>
                         <button onClick={() => updateCalc('-')} >-</button>
                     </Tooltip>
+                    <Tooltip title="Comma, used for functions">
+                        <button onClick={() => updateCalc(",")} >,</button>
+                    </Tooltip>
                     <Tooltip title="Opening Parenthesis" arrow>
                         <button onClick={() => updateCalc('(')} >(</button>
                     </Tooltip>
@@ -277,7 +290,6 @@ const Scientific = () => {
 
                     <div className="digits">
                         {createDigits()}
-
                         <Tooltip title="Place a decimal" arrow>
                             <button onClick={() => updateCalc('.')} >.</button>
                         </Tooltip>
@@ -288,6 +300,11 @@ const Scientific = () => {
                         </Tooltip>
                     </div>
                 </div>
+            </div>
+            <div>
+                <h3>Last Entered Calculation:</h3>
+                <p>{lastStep}</p>
+                <button style={{backgroundColor: "navy", borderRadius: "20%"}} onClick={undo}>Undo Last</button>
             </div>
         </div>
     );
