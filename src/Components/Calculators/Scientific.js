@@ -238,6 +238,9 @@ const Scientific = () => {
                     <Tooltip title="Subtraction and negation operator; Add before a number to negate" arrow>
                         <button onClick={() => updateCalc('-')} >-</button>
                     </Tooltip>
+                    <Tooltip title="Comma, used for functions">
+                        <button onClick={() => updateCalc(",")} >,</button>
+                    </Tooltip>
                     <Tooltip title="Opening Parenthesis" arrow>
                         <button onClick={() => updateCalc('(')} >(</button>
                     </Tooltip>
