@@ -25,192 +25,192 @@ import React, { useState , useEffect, useCallback} from 'react';
            if(values2 === "Bits"){
                const result = i * 8;
                setoutValue(result);
-               setTutValue('                            1 byte = 8 bits');
+               setTutValue('1 byte = 8 bits');
            }
            else if(values2 === "Gigabytes"){
                 const result = i * 0.000000001;
                 setoutValue(result);
-                setTutValue('             1 byte = 0.000000001 gigabytes');
+                setTutValue('1 byte = 0.000000001 gigabytes');
            }
            else if(values2 === "Kilobytes"){
                 const result = i * 0.001;
                 setoutValue(result);
-                setTutValue('                    1 byte = 0.001 kilobytes');
+                setTutValue('1 byte = 0.001 kilobytes');
             }
            else if(values2 === "Megabytes"){
                 const result = i * 0.000001;
                 setoutValue(result);
-                setTutValue('             1 byte = 0.000001 megabytes');
+                setTutValue('1 byte = 0.000001 megabytes');
             }
             else if(values2 === "Terabytes"){
                 const result = i * 0.000000000001;
                 setoutValue(result);
-                setTutValue('             1 byte = 0.000000000001 terabytes');
+                setTutValue('1 byte = 0.000000000001 terabytes');
             }
            else if(values2 === "Bytes"){
                setoutValue(i);
-               setTutValue('                                     1 byte');
+               setTutValue('1 byte');
            }
        }
        else if(values1 === "Bits"){
            if(values2 === "Bytes"){
                const result = i * 0.125;
                setoutValue(result);
-               setTutValue('                          1 bit = 0.125 bytes');
+               setTutValue('1 bit = 0.125 bytes');
 
            }
            else if(values2 === "Kilobytes"){
                 const result = i * 0.000125;
                 setoutValue(result);
-                setTutValue('               1 bit = 0.000125 kilobytes');
+                setTutValue('1 bit = 0.000125 kilobytes');
             }
            else if(values2 === "Gigabytes"){
                 const result = i * 0.000000000125;
                 setoutValue(result);
-                setTutValue('             1 bit = 0.000000000125 gigabytes');
+                setTutValue('1 bit = 0.000000000125 gigabytes');
             }
             else if(values2 === "Megabytes"){
                 const result = i * 0.000000125;   
                 setoutValue(result);
-                setTutValue('             1 bit = 0.000000125 megabytes');
+                setTutValue('1 bit = 0.000000125 megabytes');
             }
             else if(values2 === "Terabytes"){
                 const result = i * 0.000000000000125;
                 setoutValue(result);
-                setTutValue('             1 bit = 0.000000000000125 terabytes');
+                setTutValue('1 bit = 0.000000000000125 terabytes');
             }
            else if(values2 === "Bits"){
                setoutValue(i);
-               setTutValue('                                   1 bit');
+               setTutValue('1 bit');
            }
        }
        else if(values1 === "Kilobytes"){
             if(values2 === "Bytes"){
                 const result = i * 1000;
                 setoutValue(result);
-                setTutValue('                    1 kilobyte = 1000 bytes');
+                setTutValue('1 kilobyte = 1000 bytes');
             }
             else if(values2 === "Bits"){
                 const result = i * 8000;
                 setoutValue(result);
-                setTutValue('                        1 kilobyte = 8000 bits');
+                setTutValue('1 kilobyte = 8000 bits');
             }
             else if(values2 === "Gigabytes"){
                 const result = i * 0.000001;
                 setoutValue(result);
-                setTutValue('             1 kilobyte = 0.000001 gigabytes');
+                setTutValue('1 kilobyte = 0.000001 gigabytes');
             }
             else if(values2 === "Megabytes"){
                 const result = i * 0.001;
                 setoutValue(result);
-                setTutValue('                   1 kilobyte = 0.001 megabytes');
+                setTutValue('1 kilobyte = 0.001 megabytes');
             }  
             else if(values2 === "Terabytes"){
                 const result = i * 0.000000001;
                 setoutValue(result);
-                setTutValue('             1 kilobyte = 0.000000001 terabytes');
+                setTutValue('1 kilobyte = 0.000000001 terabytes');
             }
             else if(values2 === "Kilobytes"){
                 setoutValue(i);
-                setTutValue('                                 1 kilobyte');
+                setTutValue('1 kilobyte');
             }
         }
         else if(values1 === "Megabytes"){
             if(values2 === "Bytes"){
                 const result = i * 1000000;
                 setoutValue(result);
-                setTutValue('             1 megabytes = 1000000 bytes');
+                setTutValue('1 megabytes = 1000000 bytes');
             }
             else if(values2 === "Bits"){
                 const result = i * 8000000;
                 setoutValue(result);
-                setTutValue('                   1 megabyte = 8000000 bits');
+                setTutValue('1 megabyte = 8000000 bits');
             }
             else if(values2 === "Gigabytes"){
                 const result = i * 0.001;
                 setoutValue(result);
-                setTutValue('                  1 megabyte = 0.001 gigabytes');
+                setTutValue('1 megabyte = 0.001 gigabytes');
             }
             else if(values2 === "Kilobytes"){
                 const result = i * 1000;
                 setoutValue(result);
-                setTutValue('             1 megabyte = 1000 kilobytes');
+                setTutValue('1 megabyte = 1000 kilobytes');
             }  
             else if(values2 === "Terabytes"){
                 const result = i * 0.000001;
                 setoutValue(result);
-                setTutValue('             1 megabyte = 0.000001 terabytes');
+                setTutValue('1 megabyte = 0.000001 terabytes');
             }
             else if(values2 === "Megabytes"){
                 setoutValue(i);
-                setTutValue('                             1 megabyte');
+                setTutValue('1 megabyte');
             }
         }
         else if(values1 === "Gigabytes"){
             if(values2 === "Bytes"){
                 const result = i * 1000000000;
                 setoutValue(result);
-                setTutValue('                1 gigabytes = 1000000000 bytes');
+                setTutValue('1 gigabytes = 1000000000 bytes');
             }
             else if(values2 === "Bits"){
                 const result = i * 8000000000;
                 setoutValue(result);
-                setTutValue('               1 gigabyte = 8000000000 Bits');
+                setTutValue('1 gigabyte = 8000000000 Bits');
 
             }
             else if(values2 === "Megabytes"){
                 const result = i * 1000;
                 setoutValue(result);
-                setTutValue('             1 gigabyte = 1000 Megabytes');
+                setTutValue('1 gigabyte = 1000 Megabytes');
             }
             else if(values2 === "Kilobytes"){
                 const result = i * 1000000;
                 setoutValue(result);
-                setTutValue('                1 gigabyte = 1000000 Kilobytes');
+                setTutValue('1 gigabyte = 1000000 Kilobytes');
             }  
             else if(values2 === "Terabytes"){
                 const result = i * 0.001;
                 setoutValue(result);
-                setTutValue('                  1 gigabyte = 0.001 terabytes');
+                setTutValue('1 gigabyte = 0.001 terabytes');
             }
             else if(values2 === "Gigabytes"){
                 setoutValue(i);
-                setTutValue('                                  1 gigabyte');
+                setTutValue('1 gigabyte');
             }
         }
         else if(values1 === "Terabytes"){
             if(values2 === "Bytes"){
                 const result = i * 1000000000000;
                 setoutValue(result);
-                setTutValue('             1 terabyte = 1000000000000 bytes');
+                setTutValue('1 terabyte = 1000000000000 bytes');
             }
             else if(values2 === "Bits"){
                 const result = i * 8000000000000;                
                 setoutValue(result);
-                setTutValue('             1 terabyte = 8000000000000 bits');
+                setTutValue('1 terabyte = 8000000000000 bits');
 
             }
             else if(values2 === "Megabytes"){
                 const result = i * 1000000;
                 setoutValue(result);
-                setTutValue('             1 terabyte = 1000000 megabytes');
+                setTutValue('1 terabyte = 1000000 megabytes');
 
             }
             else if(values2 === "Kilobytes"){
                 const result = i * 1000000000;
                 setoutValue(result);
-                setTutValue('             1 terabyte = 1000000000 kilobytes');
+                setTutValue('1 terabyte = 1000000000 kilobytes');
 
             }  
             else if(values2 === "Gigabytes"){
                 const result = i * 1000;
                 setoutValue(result);
-                setTutValue('                   1 terabyte = 1000 gigabytes');
+                setTutValue('1 terabyte = 1000 gigabytes');
 
             }
             else if(values2 === "Terabytes"){
                 setoutValue(i);
-                setTutValue('                                  1 terabyte');
+                setTutValue('1 terabyte');
             }
         }  
     }, [values1, values2]);
@@ -220,27 +220,38 @@ import React, { useState , useEffect, useCallback} from 'react';
         dataConvert(reValue);}, [reValue, dataConvert, values1, values2] );
     
     //Add border around conversion inputs. Adjust border from here
-       const styles = {
-        border: '1px solid rgba(0, 0, 0, 1.00)', 
-        width: '300px',
-        height: '290px',
+    const styles = {
+        border: '0px', 
+        width: '320px',
+        height: '300px',
         background:'#fde6d1',
         fontSize:'18px',
+        boxShadow: "0px 20px 10px gray",
    };
-       const conversionGuide = {
+
+    const conversionGuide = {
         border: '0px',
         background: 'transparent',
-        width: '300px',
-    };  
+        width: '320px',
+        fontSize: '18px',
+        fontWeight: '100',
+        color: '#424242',
+        textAlign: "center",
+    }; 
+
     return (
         
-        <><div align="center"><h2>Data Conversion</h2>
-        <p> Enter a number and select units</p>
+        <><div align="center"><h2 style = {{fontWeight: '800', fontSize: '25px'}}>Data Conversion</h2>
+        <h2 style = {{fontWeight: '500',color: '#424242', fontSize: '25px'}}> Enter a number and select units </h2> 
+        <br></br>
             <body style={styles}>
-            <br></br>
+            <div>      
             <div>
-            <div> Conversion Guide
+                 <h4 style = {{fontWeight: '700', color: '#212121', fontSize: '18px'}}>
+                     <br></br>
+                Conversion Guide 
                 <input style = {conversionGuide} type = "text" value={tutValue} readonly = "readonly"/>
+                </h4>
             </div>
             <br></br>  
                 <form>

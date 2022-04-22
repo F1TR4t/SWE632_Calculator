@@ -40,7 +40,7 @@ import React, { useState , useEffect, useCallback} from 'react';
             }
            else if(values2 === "MilesPerHour"){
                setoutValue(i);
-               setTutValue('             1 mile per hour');
+               setTutValue('1 mile per hour');
            }
        }
        else if(values1 === "KilometersPerHour"){
@@ -61,7 +61,7 @@ import React, { useState , useEffect, useCallback} from 'react';
             }
            else if(values2 === "KilometersPerHour"){
                setoutValue(i);
-               setTutValue('          1 kilometer per hour');
+               setTutValue('1 kilometer per hour');
 
            }
        }
@@ -83,14 +83,14 @@ import React, { useState , useEffect, useCallback} from 'react';
             }
             else if(values2 === "Knots"){
                 setoutValue(i);
-                setTutValue('                   1 knots');
+                setTutValue('1 knots');
             }
         }
         else if(values1 === "Mach"){
             if(values2 === "MilesPerHour"){
                 const result = i * 761.2975;
                 setoutValue(result);
-                setTutValue('    1 mach = 761.2975 miles per hour');
+                setTutValue('1 mach = 761.2975 miles per hour');
             }
             else if(values2 === "KilometersPerHour"){
                 const result = i * 1225.08;
@@ -104,7 +104,7 @@ import React, { useState , useEffect, useCallback} from 'react';
             }
             else if(values2 === "Mach"){
                 setoutValue(i);
-                setTutValue('                        1 mach');
+                setTutValue('1 mach');
             }
         }  
     }, [values1, values2]);
@@ -115,31 +115,40 @@ import React, { useState , useEffect, useCallback} from 'react';
     
     //Add border around conversion inputs. Adjust border from here
     const styles = {
-            border: '1px solid rgba(0, 0, 0, 1.00)', 
-            width: '400px',
-            height: '280px',
-            background:'#fde6d1',
-            fontSize:'18px',
-       };
-       const conversionGuide = {
+        border: '0px', 
+        width: '360px',
+        height: '300px',
+        background:'#fde6d1',
+        fontSize:'18px',
+        boxShadow: "0px 20px 10px gray",
+   };
+
+    const conversionGuide = {
         border: '0px',
         background: 'transparent',
-        width: '240px',
-    };
+        width: '360px',
+        fontSize: '18px',
+        fontWeight: '100',
+        color: '#424242',
+        textAlign: "center",
+    };  
     //render/html for Speed Conversion
     //Two Dropdown boxes to pick measurement types
     // An input text field to enter a number (top).
     // An input text field that outputs converted result (readonly/noneditable)
     return (
         
-        <><div align="center"><h2>Speed Conversion</h2>
-        <p> Enter a number and select units</p>
+        <><div align="center"><h2 style = {{fontWeight: '800', fontSize: '25px'}}>Speed Conversion</h2>
+        <h2 style = {{fontWeight: '500',color: '#424242', fontSize: '25px'}}> Enter a number and select units </h2> 
+        <br></br>
             <body style={styles}>
-            <br></br>
+            <div>      
             <div>
-            <div> Conversion Guide
-                <br></br>
+                 <h4 style = {{fontWeight: '700', color: '#212121', fontSize: '18px'}}>
+                     <br></br>
+                Conversion Guide 
                 <input style = {conversionGuide} type = "text" value={tutValue} readonly = "readonly"/>
+                </h4>
             </div>
             <br></br>
                 <form>
