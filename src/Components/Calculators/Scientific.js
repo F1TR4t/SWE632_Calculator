@@ -130,18 +130,6 @@ const Scientific = () => {
         setLastStep('N/A');
     }
 
-    const createDigits = () => {
-        const digits = [];
-        for (let i = 1; i < 10; i++) {
-            digits.push(
-                <button onClick={() => updateCalc(i.toString())} key={i}>
-                    {i}
-                </button>
-            )
-        }
-        return digits;
-    }
-
     const calculate = () => {
         try {
             setLastStep(calc);
@@ -222,83 +210,105 @@ const Scientific = () => {
                     <div className="display">
                         {calc || "0"}
                     </div>
-                
-                    
 
-                    <div className="operators">
-                    <Tooltip title="Division opeartor; WARNING: Do not divide by 0" arrow>
-                        <button onClick={() => updateCalc('/')} >/</button>
-                    </Tooltip>
-                    <Tooltip title="Multiplication operator" arrow>
-                        <button onClick={() => updateCalc('*')} >*</button>
-                    </Tooltip>
-                    <Tooltip title="Addition operator" arrow>
-                        <button onClick={() => updateCalc('+')} >+</button>
-                    </Tooltip>
-                    <Tooltip title="Subtraction and negation operator; Add before a number to negate" arrow>
-                        <button onClick={() => updateCalc('-')} >-</button>
-                    </Tooltip>
-                    <Tooltip title="Comma, used for functions">
-                        <button onClick={() => updateCalc(",")} >,</button>
-                    </Tooltip>
-                    <Tooltip title="Opening Parenthesis" arrow>
-                        <button onClick={() => updateCalc('(')} >(</button>
-                    </Tooltip>
-                    <Tooltip title="Closing Parenthesis" arrow>
-                        <button onClick={() => updateCalc(')')} >)</button>
-                    </Tooltip>
-                    <Tooltip title="Delete last character" arrow>
-                        <button onClick={deleteLast}>del</button>
-                    </Tooltip>
-                    <Tooltip title="Clear calculator" arrow>
-                        <button onClick={clrCalc}>clr/esc</button>
-                    </Tooltip>
-
-                        
-                    </div>
-
-                    <div className="functions">
-                        <Tooltip title="Cosine function; Math.cos(x) where x is in radians" arrow>
-                            <button onClick={() => updateCalc('Math.cos(')} >cos</button>
-                        </Tooltip>
-                        <Tooltip title="Sine function; Math.sin(x) where x is in radians" arrow>
-                            <button onClick={() => updateCalc('Math.sin(')}>sin</button>
-                        </Tooltip>
-                        <Tooltip title="Tangent function; Math.tan(x) where x is in radians" arrow>
-                            <button onClick={() => updateCalc('Math.tan(')}>tan</button>
-                        </Tooltip>
-                        <Tooltip title="Exponent function; Math.pow(x, y), where x is the value and y is the exponent" arrow>
-                            <button onClick={() => updateCalc('Math.pow(')}>
-                                x
-                                <sup>y</sup>
-                            </button>
-                        </Tooltip>
-                        <Tooltip title="Lograthmic function; log(y, x), where y is the value and x is the log base" arrow>
-                            <button onClick={() => updateCalc('log(')}>log
-                                <sub>x</sub>
+                    <div className="calculator-bottom">
+                        <div className='clear'>
+                        <Tooltip title="Clear calculator" arrow>
+                            <button onClick={clrCalc}>clear</button>
+                        </Tooltip></div>
+                        <div className="calculator-functions">
+                         <div className='functions'>
+                            <Tooltip title="Cosine function; Math.cos(x) where x is in radians" arrow>
+                             <button onClick={() => updateCalc('Math.cos(')} >cos</button>
+                            </Tooltip></div>
+                            <div className='functions'>
+                            <Tooltip title="Sine function; Math.sin(x) where x is in radians" arrow>
+                                <button onClick={() => updateCalc('Math.sin(')}>sin</button>
+                         </Tooltip></div>
+                         <div className='functions'>
+                         <Tooltip title="Tangent function; Math.tan(x) where x is in radians" arrow>
+                             <button onClick={() => updateCalc('Math.tan(')}>tan</button>
+                         </Tooltip></div>
+                         <div className='functions'>
+                          <Tooltip title="Exponent function; Math.pow(x, y), where x is the value and y is the exponent" arrow>
+                              <button onClick={() => updateCalc('Math.pow(')}>
+                                  x
+                                  <sup>y</sup>
+                               </button>
+                           </Tooltip></div>
+                           <div className='functions'>
+                           <Tooltip title="Lograthmic function; log(y, x), where y is the value and x is the log base" arrow>
+                               <button onClick={() => updateCalc('log(')}>log
+                                   <sub>x</sub>
                                 y
-                            </button>
-                        </Tooltip>
-                        <Tooltip title="Root function; root(y, x), where y is the value and x is the root power" arrow>
-                            <button onClick={() => updateCalc('root(')}>
-                                <sup>x</sup>
-                                {"\u221A"}y
-                            </button>
-                        </Tooltip>
+                               </button>
+                           </Tooltip></div>
+                           <div className='functions'>
+                           <Tooltip title="Root function; root(y, x), where y is the value and x is the root power" arrow>
+                                <button onClick={() => updateCalc('root(')}>
+                                    <sup>x</sup>
+                                    {"\u221A"}y
+                                </button>
+                            </Tooltip></div>
+                            </div>
+
+                        </div>
+                
+                    <div className='calculator2-buttons'>
+                    <div className='digits'>        
+                        <Tooltip title="Comma, used for functions">
+                            <button onClick={() => updateCalc(",")} >,</button>
+                        </Tooltip></div>
+                        <div className='digits'>
+                        <Tooltip title="Opening Parenthesis" arrow>
+                            <button onClick={() => updateCalc('(')} >(</button>
+                        </Tooltip></div>
+                        <div className='digits'>
+                        <Tooltip title="Closing Parenthesis" arrow>
+                            <button onClick={() => updateCalc(')')} >)</button>
+                        </Tooltip></div>
+                        <div className='operators'>
+                        <Tooltip title="Division opeartor; WARNING: Do not divide by 0" arrow>
+                            <button onClick={() => updateCalc('/')} >/</button>
+                        </Tooltip></div>
+                         <div className='digits'><button onClick={() => updateCalc('1')} >1</button></div>
+                         <div className='digits'><button onClick={() => updateCalc('2')} >2</button></div>
+                         <div className='digits'><button onClick={() => updateCalc('3')} >3</button></div>
+                          <div className='operators'>
+                        <Tooltip title="Multiplication operator" arrow>
+                            <button onClick={() => updateCalc('*')} >*</button>
+                        </Tooltip></div>
+                        <div className='digits'><button onClick={() => updateCalc('4')} >4</button></div>
+                         <div className='digits'><button onClick={() => updateCalc('5')} >5</button></div>
+                         <div className='digits'><button onClick={() => updateCalc('6')} >6</button></div>
+                        <div className='operators'><Tooltip title="Subtraction and negation operator; Add before a number to negate" arrow>
+                            <button onClick={() => updateCalc('-')} >-</button>
+                        </Tooltip></div>
+                        <div className='digits'><button onClick={() => updateCalc('7')} >7</button></div>
+                         <div className='digits'><button onClick={() => updateCalc('8')} >8</button></div>
+                         <div className='digits'><button onClick={() => updateCalc('9')} >9</button></div>
+                        <div className='operators'><Tooltip title="Addition operator" arrow>
+                            <button onClick={() => updateCalc('+')} >+</button>
+                        </Tooltip></div> 
+                        <div className='digits'>
+                                <Tooltip title="Delete last character" arrow>
+                            <button onClick={deleteLast}>del</button>
+                        </Tooltip></div>
+                        <div className='digits'><button onClick={() => updateCalc('0')} >0</button></div>
+                        <div className='digits'>
+                         <Tooltip title="Place a decimal" arrow>
+                             <button onClick={() => updateCalc('.')} >.</button>
+                         </Tooltip></div>
+                         
+                        
+                        <div className='equal'> <Tooltip title="Calculate equation" arrow>
+                                <button onClick={calculate}>=</button>
+                            </Tooltip></div>
                     </div>
+                        
 
-
-                    <div className="digits">
-                        {createDigits()}
-                        <Tooltip title="Place a decimal" arrow>
-                            <button onClick={() => updateCalc('.')} >.</button>
-                        </Tooltip>
-                        <button onClick={() => updateCalc('0')} >0</button>
-
-                        <Tooltip title="Calculate equation" arrow>
-                            <button onClick={calculate}>=</button>
-                        </Tooltip>
-                    </div>
+                    
+                    
                 </div>
             </div>
             <div>
