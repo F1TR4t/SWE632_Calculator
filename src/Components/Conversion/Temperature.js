@@ -31,23 +31,23 @@ import React, { useState , useEffect, useCallback} from 'react';
             }
            else if(values2 === "Fahrenheit"){
                setoutValue(i);
-               setTutValue('                 1 fahrenheit');
+               setTutValue('1 fahrenheit');
            }
        }
        else if(values1 === "Celsius"){
            if(values2 === "Fahrenheit"){
                const result = (i*(9/5))+32;
                setoutValue(result);
-               setTutValue('     1 celsius = 33.8 fahrenheit');
+               setTutValue('1 celsius = 33.8 fahrenheit');
            }
            else if(values2 === "Kelvin"){
                 const result = i + 273.15;  
                 setoutValue(result);
-                setTutValue('      1 celsius = 1273.15 kelvin');
+                setTutValue('1 celsius = 1273.15 kelvin');
             }
            else if(values2 === "Celsius"){
                setoutValue(i);
-               setTutValue('                 1 celsius');
+               setTutValue('1 celsius');
            }
        }
        else if(values1 === "Kelvin"){
@@ -59,11 +59,11 @@ import React, { useState , useEffect, useCallback} from 'react';
             else if(values2 === "Celsius"){
                 const result = i -273.15;
                 setoutValue(result);
-                setTutValue('      1 kelvin = -272.15 celsius');
+                setTutValue('1 kelvin = -272.15 celsius');
             }
             else if(values2 === "Kelvin"){
                 setoutValue(i);
-                setTutValue('                 1 kelvin');
+                setTutValue('1 kelvin');
             }
         }  
     }, [values1, values2]);
@@ -74,31 +74,40 @@ import React, { useState , useEffect, useCallback} from 'react';
     
     //Add border around conversion inputs. Adjust border from here
     const styles = {
-            border: '1px solid rgba(0, 0, 0, 1.00)', 
-            width: '300px',
-            height: '280px',
-            background:'#fde6d1',
-            fontSize:'18px',
-       };
+        border: '0px', 
+        width: '300px',
+        height: '300px',
+        background:'#fde6d1',
+        fontSize:'18px',
+        boxShadow: "0px 20px 10px gray",
+   };
 
     const conversionGuide = {
         border: '0px',
         background: 'transparent',
-        width: '200px',
-    };
+        width: '300px',
+        fontSize: '18px',
+        fontWeight: '100',
+        color: '#424242',
+        textAlign: "center",
+    }; 
     //render/html for Temperature Conversion
     //Two Dropdown boxes to pick measurement types
     // An input text field to enter a number (top).
     // An input text field that outputs converted result (readonly/noneditable)
     return (
         
-        <><div align="center"><h2>Temperature Conversion</h2>
-        <p> Enter a number and select units</p>
+        <><div align="center"><h2 style = {{fontWeight: '800', fontSize: '25px'}}>Temperature Conversion</h2>
+        <h2 style = {{fontWeight: '500',color: '#424242', fontSize: '25px'}}> Enter a number and select units </h2> 
+        <br></br>
             <body style={styles}>
-            <br></br>
+            <div>      
             <div>
-            <div> Conversion Guide
+                 <h4 style = {{fontWeight: '700', color: '#212121', fontSize: '18px'}}>
+                     <br></br>
+                Conversion Guide 
                 <input style = {conversionGuide} type = "text" value={tutValue} readonly = "readonly"/>
+                </h4>
             </div>
             <br></br>
                 <form>

@@ -25,186 +25,186 @@ import React, { useState , useEffect, useCallback} from 'react';
            if(values2 === "Grams"){
                const result = i * 453.59237;   
                setoutValue(result);
-               setTutValue('                 1 pound = 453.59237 grams');
+               setTutValue('1 pound = 453.59237 grams');
            }
            else if(values2 === "Milligrams"){
                 const result = i * 453592.37;  
                 setoutValue(result);
-                setTutValue('                 1 pound = 453592.37 milligrams');
+                setTutValue('1 pound = 453592.37 milligrams');
            }
            else if(values2 === "Ounces"){
                 const result = i * 16;
                 setoutValue(result);
-                setTutValue('                        1 pound = 16 ounces');
+                setTutValue('1 pound = 16 ounces');
             }
            else if(values2 === "MetricTonnes"){
                 const result = i * 0.00045359;
                 setoutValue(result);
-                setTutValue('               1 pound = 0.00045359 metric tonnes');
+                setTutValue('1 pound = 0.00045359 metric tonnes');
             }
             else if(values2 === "Kilograms"){
                 const result = i * 0.45359237;
                 setoutValue(result);
-                setTutValue('                1 pound = 0.45359237 kilograms');
+                setTutValue('1 pound = 0.45359237 kilograms');
             }
            else if(values2 === "Pounds"){
                setoutValue(i);
-               setTutValue('                             1 pound');
+               setTutValue('1 pound');
            }
        }
        else if(values1 === "Grams"){
            if(values2 === "Pounds"){
                const result = i * 0.00220462;
                setoutValue(result);
-               setTutValue('                   1 gram = 0.00220462 pounds');
+               setTutValue('1 gram = 0.00220462 pounds');
            }
            else if(values2 === "Ounces"){
                 const result = i * 0.03527396; 
                 setoutValue(result);
-                setTutValue('                   1 gram = 0.03527396 ounces');
+                setTutValue('1 gram = 0.03527396 ounces');
             }
            else if(values2 === "Milligrams"){
                 const result = i * 1000;
                 setoutValue(result);
-                setTutValue('                     1 gram = 1000 milligrams');
+                setTutValue('1 gram = 1000 milligrams');
             }
             else if(values2 === "MetricTonnes"){
                 const result = i * 0.000001;
                 setoutValue(result);
-                setTutValue('                             1 gram = 0.000001 metric tonnes');
+                setTutValue('1 gram = 0.000001 metric tonnes');
             }
             else if(values2 === "Kilograms"){
                 const result = i * 0.001; 
                 setoutValue(result);
-                setTutValue('                   1 gram = 0.001 kilograms');
+                setTutValue('1 gram = 0.001 kilograms');
             }
            else if(values2 === "Grams"){
                setoutValue(i);
-               setTutValue('                             1 gram');
+               setTutValue('1 gram');
            }
        }
        else if(values1 === "Ounces"){
             if(values2 === "Pounds"){
                 const result = i * 0.0625; 
                 setoutValue(result);
-                setTutValue('                     1 ounce = 0.0625 pounds');
+                setTutValue('1 ounce = 0.0625 pounds');
             }
             else if(values2 === "Grams"){
                 const result = i * 28.3495231;
                 setoutValue(result);
-                setTutValue('                  1 ounce = 28.3495231 grams');
+                setTutValue('1 ounce = 28.3495231 grams');
             }
             else if(values2 === "Milligrams"){
                 const result = i * 28349.5231;
                 setoutValue(result);
-                setTutValue('                1 ounce = 28349.5231 milligrams');
+                setTutValue('1 ounce = 28349.5231 milligrams');
             }
             else if(values2 === "MetricTonnes"){
                 const result = i * 0.00002835; 
                 setoutValue(result);
-                setTutValue('               1 ounce = 0.00002835 metric tonnes');
+                setTutValue('1 ounce = 0.00002835 metric tonnes');
             }  
             else if(values2 === "Kilograms"){
                 const result = i * 0.02834952;
                 setoutValue(result);
-                setTutValue('                  1 ounce = 0.02834952 kilograms');
+                setTutValue('1 ounce = 0.02834952 kilograms');
             }
             else if(values2 === "Ounces"){
                 setoutValue(i);
-                setTutValue('                             1 ounce');
+                setTutValue('1 ounce');
             }
         }
         else if(values1 === "MetricTonnes"){
             if(values2 === "Pounds"){
                 const result = i * 2204.62262;
                 setoutValue(result);
-                setTutValue('                   1 metric ton = 2204.62262 pounds');
+                setTutValue('1 metric ton = 2204.62262 pounds');
             }
             else if(values2 === "Grams"){
                 const result = i * 1000000; 
                 setoutValue(result);
-                setTutValue('                   1 metric ton = 1000000 grams');
+                setTutValue('1 metric ton = 1000000 grams');
             }
             else if(values2 === "Milligrams"){
                 const result = i * 1000000000;
                 setoutValue(result);
-                setTutValue('              1 metric ton = 1000000000 milligrams');
+                setTutValue('1 metric ton = 1000000000 milligrams');
             }
             else if(values2 === "Ounces"){
                 const result = i * 35273.962;
                 setoutValue(result);
-                setTutValue('                1 metric ton = 35273.962 ounces');
+                setTutValue('1 metric ton = 35273.962 ounces');
             }  
             else if(values2 === "Kilograms"){
                 const result = i * 1000;
                 setoutValue(result);
-                setTutValue('                   1 metric ton = 1000 kilograms');
+                setTutValue('1 metric ton = 1000 kilograms');
             }
             else if(values2 === "MetricTonnes"){
                 setoutValue(i);
-                setTutValue('                             1 metric ton');
+                setTutValue('1 metric ton');
             }
         }
         else if(values1 === "Milligrams"){
             if(values2 === "Pounds"){
                 const result = i * 0.0000022;
                 setoutValue(result);
-                setTutValue('                  1 milligram = 0.0000022 pounds');
+                setTutValue('1 milligram = 0.0000022 pounds');
             }
             else if(values2 === "Grams"){
                 const result = i * 0.001; 
                 setoutValue(result);
-                setTutValue('                    1 milligram = 0.001 grams');
+                setTutValue('1 milligram = 0.001 grams');
             }
             else if(values2 === "MetricTonnes"){
                 const result = i * 0.0000000001;
                 setoutValue(result);
-                setTutValue('         1 milligram = 0.0000000001 metric tonnes');
+                setTutValue('1 milligram = 0.0000000001 metric tonnes');
             }
             else if(values2 === "Ounces"){
                 const result = i * 0.00003527; 
                 setoutValue(result);
-                setTutValue('                 1 milligram = 0.00003527 ounces');
+                setTutValue('1 milligram = 0.00003527 ounces');
             }  
             else if(values2 === "Kilograms"){
                 const result = i * 0.000001;               
                 setoutValue(result);
-                setTutValue('                  1 milligram = 0.000001 kilograms');
+                setTutValue('1 milligram = 0.000001 kilograms');
             }
             else if(values2 === "Milligrams"){
                 setoutValue(i);
-                setTutValue('                             1 milligram');
+                setTutValue('1 milligram');
             }
         }
         else if(values1 === "Kilograms"){
             if(values2 === "Pounds"){
                 const result = i * 2.20462262;
                 setoutValue(result);
-                setTutValue('                1 kilogram = 2.20462262 pounds');
+                setTutValue('1 kilogram = 2.20462262 pounds');
             }
             else if(values2 === "Grams"){
                 const result = i * 1000;
                 setoutValue(result);
-                setTutValue('                   1 kilogram = 1000 grams');
+                setTutValue('1 kilogram = 1000 grams');
             }
             else if(values2 === "MetricTonnes"){
                 const result = i * 0.001;
                 setoutValue(result);
-                setTutValue('                1 kilogram = 0.001 metric tonnes');
+                setTutValue('1 kilogram = 0.001 metric tonnes');
             }
             else if(values2 === "Ounces"){
                 const result = i * 35.273962;
                 setoutValue(result);
-                setTutValue('                1 kilogram = 35.273962 ounces');
+                setTutValue('1 kilogram = 35.273962 ounces');
             }  
             else if(values2 === "Milligrams"){
                 const result = i * 1000000;  
                 setoutValue(result);
-                setTutValue('                 1 kilogram = 1000000 milligrams');
+                setTutValue('1 kilogram = 1000000 milligrams');
             }
             else if(values2 === "Kilograms"){
                 setoutValue(i);
-                setTutValue('                             1 kilogram');
+                setTutValue('1 kilogram');
             }
         }
     }, [values1, values2]);
@@ -215,18 +215,23 @@ import React, { useState , useEffect, useCallback} from 'react';
     
     //Add border around conversion inputs. Adjust border from here
     const styles = {
-            border: '1px solid rgba(0, 0, 0, 1.00)', 
-            width: '300px',
-            height: '280px',
-            background:'#fde6d1',
-            fontSize:'18px',
-        };
- 
-        const conversionGuide = {
-         border: '0px',
-         background: 'transparent',
-         width: '350px',
-     };
+        border: '0px', 
+        width: '340px',
+        height: '300px',
+        background:'#fde6d1',
+        fontSize:'18px',
+        boxShadow: "0px 20px 10px gray",
+   };
+
+    const conversionGuide = {
+        border: '0px',
+        background: 'transparent',
+        width: '340px',
+        fontSize: '18px',
+        fontWeight: '100',
+        color: '#424242',
+        textAlign: "center",
+    }; 
      
     //render/html for Mass Conversion
     //Two Dropdown boxes to pick measurement types
@@ -234,13 +239,17 @@ import React, { useState , useEffect, useCallback} from 'react';
     // An input text field that outputs converted result (readonly/noneditable)
     return (
         
-        <><div align="center"><h2>Mass and Weight Conversion</h2>
-        <p> Enter a number and select units</p>
+        <><div align="center"><h2 style = {{fontWeight: '800', fontSize: '25px'}}>Mass and Weight Conversion</h2>
+        <h2 style = {{fontWeight: '500',color: '#424242', fontSize: '25px'}}> Enter a number and select units </h2> 
+        <br></br>
             <body style={styles}>
-            <br></br>
+            <div>      
             <div>
-            <div> Conversion Guide
+                 <h4 style = {{fontWeight: '700', color: '#212121', fontSize: '18px'}}>
+                     <br></br>
+                Conversion Guide 
                 <input style = {conversionGuide} type = "text" value={tutValue} readonly = "readonly"/>
+                </h4>
             </div>
             <br></br>
                 <form>
