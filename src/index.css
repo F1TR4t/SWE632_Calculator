@@ -10,8 +10,11 @@
 
 :root{
   --primary: #1e75d8;
+  --secondary: #404a58;
   --dark: #1f252e;
   --light: #cab5a1;
+  --submit: #00C851;
+  --danger: #ff4444;
 }
 
 .App1{
@@ -25,19 +28,48 @@
 .calculator{
   width: 100%;
   max-width: 400px;
-  background-color: #FFF;
+  height: 400px;
+  background-color: #2d343d;
+  display: inline-block;
   border-radius: 8px;
   overflow: hidden;
   box-shadow: 0px 2px 64px rgba(0, 0, 0, 0,2);
 }
 
+.calculator-bottom {
+  display: grid;
+  grid-template-columns: 22% 78% ;
+  margin-top: 20px;
+  margin-left: 15px;
+  margin-right: -25px;
+}
+
+.calculator-functions {
+  display: grid;
+  grid-template-columns: 15% 15% 15% 15% 15% 15%;
+}
+
+.calculator1-buttons{
+  margin-top:20px;
+  display: grid;
+  grid-template-columns: 25% 25% 25% 25%;
+}
+
 .sci_calculator {
-    width: 100%;
-    max-width: 800px;
-    background-color: #FFF;
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0px 2px 64px rgba(0, 0, 0, 0,2);
+  width: 100%;
+  max-width: 800px;
+  height: 500px;
+  background-color: #2d343d;
+  display: inline-block;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0px 2px 64px rgba(0, 0, 0, 0,2);
+}
+
+.calculator2-buttons{
+  margin-top:20px;
+  display: grid;
+  grid-template-columns: 25% 25% 25% 25%;
 }
 
 .display {
@@ -60,7 +92,7 @@ button{
   outline: none;
   color: #FFF;
   font-size: 20px;
-  padding: 16px;
+  padding: 17px;
   cursor: pointer;
   transition: 0.4s;
 }
@@ -69,34 +101,118 @@ button:hover{
   opacity: 0.9;
 }
 
-.operators{
+.primary {
+  margin-left: 20%;
+  margin-right: 20%;
+  display: inline-block;
   display: flex;
+  flex-wrap: wrap;
+  padding:0.5px;
 }
 
-.operators button{
-  flex: 1 1 0%;
+.primary button {
+  flex: 100%;
+  max-width: 100%;
+  max-height: 95%;
+  border:none;
+  border-radius:12px;
   background-color: var(--primary);
   font-weight: 700;
 }
 
+.operators{
+  margin-left: 20%;
+  margin-right: 20%;
+  display: inline-block;
+  display: flex;
+  flex-wrap: wrap;
+  padding:0.5px;
+}
+
+.operators button{
+  flex: 100%;
+  max-width: 100%;
+  max-height: 95%;
+  border:none;
+  border-radius:12px;
+  background-color: var(--primary);
+  font-weight: 700;
+}
+
+.clear {
+  margin-left: 15%;
+  margin-right: 15%;
+  display: inline-block;
+  display: flex;
+  flex-wrap: wrap;
+  padding:0.5px;
+}
+
+.clear button {
+  text-align: center;
+  flex: 100%;
+  max-width: 100%;
+  max-height: 95%;
+  border:none;
+  border-radius:12px;
+  background-color: var(--danger);
+  font-weight: 500;
+}
+
+.equal {
+  margin-left: 20%;
+  margin-right: 20%;
+  display: inline-block;
+  display: flex;
+  flex-wrap: wrap;
+  padding:0.5px;
+}
+
+.equal button {
+  text-align: center;
+  flex: 100%;
+  max-width: 100%;
+  max-height: 95%;
+  border:none;
+  border-radius:12px;
+  background-color: var(--submit);
+  font-weight: 500;
+}
+
 .functions {
-    display: flex;
+  margin-left: 10%;
+  margin-right: 5%;
+  display: inline-block;
+  display: flex;
+  flex-wrap: wrap;
+  padding:2px;
 }
 
 .functions button {
-    flex: 1 1 0%;
-    background-color: var(--primary);
-    font-weight: 700;
+  flex: 100%;
+  max-width: 100%;
+  max-height: 95%;
+  border:none;
+  border-radius:12px;
+  background-color: var(--secondary);
+  font-weight: 700;
 }
 
 .digits{
+  margin-left: 20%;
+  margin-right: 20%;
+  display: inline-block;
   display: flex;
   flex-wrap: wrap;
+  padding:0.5px;
 }
 
 .digits button{
-  flex: 1 1 33.333%;
-  max-width: 33.333%;
+  flex: 100%;
+  max-width: 100%;
+  max-height: 95%;
+  border:none;
+  border-radius:12px;
   background-color: var(--dark);
 }
 
