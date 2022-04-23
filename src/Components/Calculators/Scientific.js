@@ -214,7 +214,7 @@ const Scientific = () => {
                     <div className="calculator-bottom">
                         <div className='clear'>
                         <Tooltip title="Clear calculator" arrow>
-                            <button onClick={clrCalc}>clr/esc</button>
+                            <button onClick={clrCalc}>clear</button>
                         </Tooltip></div>
                         <div className="calculator-functions">
                          <div className='functions'>
