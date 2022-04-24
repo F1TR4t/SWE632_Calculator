@@ -11,19 +11,15 @@ const TaxCalculator = () =>{
         border: '0px', 
         width: '500px',
         height: '120px',
-        background: '#fde6d1',
         padding: '10px',
-        boxShadow: "0px 20px 10px gray",
     };
     const box2 = {
         border: '0px', 
         width: '400px',
         height: '80px',
-        background: '#fde6d1',
         padding: '10px',
         fontSize: '18px',
         fontWeight: 'bold',
-        boxShadow: "0px 20px 10px gray",
     };
 
     const calcTax = () => {
@@ -252,7 +248,7 @@ const TaxCalculator = () =>{
         digits.push(<br></br>)
         digits.push(<br></br>)
         digits.push(
-            <body style={box2}>
+            <body className='info-container' style={box2}>
                 Estimated Total Taxes: ${(totalFed+totalSt).toFixed(2)}
                 <br></br>
                 Take-home Income: ${(taxableIncome-totalFed-totalSt).toFixed(2)}
@@ -265,8 +261,8 @@ const TaxCalculator = () =>{
     
     return (
         
-        <div align="center"><h2>Income Tax Calculator</h2>
-        <body style={box}>
+        <div align="center"><h1>Income Tax Calculator</h1>
+        <body className='info-container' style={box}>
             <span style={{ fontWeight: 'bold'}}> Input Household Income and State.</span>
             <div>
                 <form>

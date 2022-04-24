@@ -152,10 +152,10 @@ const Scientific = () => {
    
 
     return (
-        <div align="center">
+        <div className="entire-page" align="center">
             <h1>Scientific Calculator</h1>
-            <body style={box}>
-                    <h1>Help and documentation</h1>
+            <body className='info-container' >
+                    <h2>Help and documentation</h2>
                     <table border="1px">
                         <tr>
                             <th>Function</th>
@@ -205,6 +205,7 @@ const Scientific = () => {
 
                     
             </body>
+            <br/><br/>
             <div className="App1">
                 <div className="sci_calculator">
                     <div className="display">
@@ -311,10 +312,11 @@ const Scientific = () => {
                     
                 </div>
             </div>
-            <div>
-                <h3>Last Entered Calculation:</h3>
+            <br/><br/>
+            <div className='undo-area'>
+            <p><b>Last Entered Calculation:</b></p>
                 <p>{lastStep}</p>
-                <button style={{backgroundColor: "navy", borderRadius: "20%"}} onClick={undo}>Undo Last</button>
+                <button className="undo-button" onClick={undo}>Undo Last</button>
             </div>
         </div>
     );

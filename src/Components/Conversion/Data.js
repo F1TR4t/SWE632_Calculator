@@ -224,9 +224,9 @@ import React, { useState , useEffect, useCallback} from 'react';
         border: '0px', 
         width: '320px',
         height: '300px',
-        background:'#fde6d1',
+        background:'#C2C3C5',
         fontSize:'18px',
-        boxShadow: "0px 20px 10px gray",
+        boxShadow: "0px 20px 10px #5F6368",
    };
 
     const conversionGuide = {
@@ -241,7 +241,7 @@ import React, { useState , useEffect, useCallback} from 'react';
 
     return (
         
-        <><div align="center"><h2 style = {{fontWeight: '800', fontSize: '25px'}}>Data Conversion</h2>
+        <><div align="center"><h1>Data Conversion</h1>
         <h2 style = {{fontWeight: '500',color: '#424242', fontSize: '25px'}}> Enter a number and select units </h2> 
         <br></br>
             <body style={styles}>

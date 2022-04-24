@@ -136,7 +136,7 @@ const Calculator = () =>{
     
     return (
 
-    <div align="center">
+    <div className="entire-page" align="center">
         <h1>Simple Calculator</h1>
         <div className="App1">
             <div className="calculator">
@@ -227,10 +227,10 @@ const Calculator = () =>{
                 </div>
             </div>
         </div>
-        <div>
-            <h3>Last Entered Calculation:</h3>
+        <div className='undo-area'>
+            <p><b>Last Entered Calculation:</b></p>
             <p>{lastStep}</p>
-            <button style={{backgroundColor: "navy", borderRadius: "20%"}} onClick={undo}>Undo Last</button>
+            <button className="undo-button" onClick={undo}>Undo Last</button>
         </div>
     </div>
     );

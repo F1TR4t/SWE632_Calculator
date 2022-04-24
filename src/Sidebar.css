@@ -8,11 +8,11 @@
   }
   
   .bm-burger-bars {
-    background: #1e34b3;
+    background: #00A568;
   }
   
   .bm-burger-bars-hover {
-    background: #fd0000;
+    background: #85D1B2;
   }
   
   .bm-cross-button {
@@ -31,9 +31,11 @@
   
   /*menu itself*/
   .bm-menu {
-    background: #5d6383;
+    background: #5F6368;
     padding: 2.5em 1.5em 0;
     font-size: 1.15em;
+    border-radius: 35px;
+    margin-left: -35px;
   }
   
   .bm-item-list {
@@ -44,11 +46,11 @@
   /*Menu options above Conversions*/
   .bm-item {
     display: inline-block;
-    color: rgb(4, 252, 99);
+    color: #00A568;
     text-decoration: none;
   }
   .bm-item:hover {
-    color: #fd0505;
+    color: #85D1B2;
   }
   
   /*Options under "Conversion" dropdown menu*/
@@ -59,12 +61,12 @@
 
   .dropdown-options a {
     display: block;
-    color: rgb(4, 252, 99);
+    color: #00A568;
     padding: 5px;
     text-decoration: none;
   }
   .dropdown-options a:hover {
-    color: #fd0505;
+    color: #85D1B2;
   }
 
   /*The "Conversions" menu option*/
@@ -91,7 +93,7 @@
 }
 
 .dbutton:hover {
-  color: #fe0202;
+  color: #C2C3C5;
 }
 
 /*this is used to help toggle dropdown menu*/

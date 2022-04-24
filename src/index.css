@@ -2,6 +2,8 @@
   box-sizing: border-box;
 }
 
+
+
 #page-wrap {
   padding-bottom: 10px;
   padding-top: 10px;
@@ -12,9 +14,26 @@
   --primary: #1e75d8;
   --secondary: #404a58;
   --dark: #1f252e;
-  --light: #cab5a1;
+  --light: #F8F9FA;
   --submit: #00C851;
   --danger: #ff4444;
+}
+
+.menu-header {
+  text-align: left;
+  margin-top: -3px;
+  margin-left: 20px;
+  position: fixed;
+  z-index: 1;
+}
+
+.info-container {
+  background-color: #C2C3C5;
+  border: 1px;
+  width: 620px;
+  height: 300px;
+  border-radius: 20px;
+  box-shadow: 0px 20px 10px #5F6368;
 }
 
 .App1{
@@ -33,12 +52,12 @@
   display: inline-block;
   border-radius: 8px;
   overflow: hidden;
-  box-shadow: 0px 2px 64px rgba(0, 0, 0, 0,2);
+  box-shadow: 0px 20px 10px #5F6368;
 }
 
 .calculator-bottom {
   display: grid;
-  grid-template-columns: 22% 78% ;
+  grid-template-columns: 16% 84% ;
   margin-top: 20px;
   margin-left: 15px;
   margin-right: -25px;
@@ -46,7 +65,7 @@
 
 .calculator-functions {
   display: grid;
-  grid-template-columns: 15% 15% 15% 15% 15% 15%;
+  grid-template-columns: 14% 14% 15% 13% 19% 17%;
 }
 
 .calculator1-buttons{
@@ -63,7 +82,7 @@
   display: inline-block;
   border-radius: 8px;
   overflow: hidden;
-  box-shadow: 0px 2px 64px rgba(0, 0, 0, 0,2);
+  box-shadow: 0px 20px 10px #5F6368;
 }
 
 .calculator2-buttons{
@@ -215,6 +234,28 @@ button:hover{
   border-radius:12px;
   background-color: var(--dark);
 }
+
+.undo-button {
+  max-width: 200px;
+  max-height: 55px;
+  border-radius: 20%;
+  background-color: var(--danger);
+}
+
+.undo-area {
+  display: grid;
+  grid-template-columns:  185px 300px 130px;
+  max-width: 50%;
+}
+
+.entire-page {
+  display: grid;
+  grid-auto-flow: row;
+  align-items: center;
+  justify-content: center;
+}
+
+
 
 body {
   margin: 0;

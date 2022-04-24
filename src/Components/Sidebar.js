@@ -7,12 +7,15 @@ import Conversion from "./Conversion/Conversion";
 
 const Sidebar = () => {
   return (
-    <Menu>
+    <div>
+      <h1 className='menu-header'>Menu</h1>
+      <Menu>
           <a className="menu-item" href="/">Simple Calculator</a>
           <a className="menu-item2" href="/Scientific">Scientific Calculator</a>
           <a className="menu-item3" href="/Tax">Tax Calculator</a>
-    <Conversion></Conversion>    
-    </Menu>
+      <Conversion></Conversion>    
+      </Menu>
+    </div>
   );
 };
 export default Sidebar;

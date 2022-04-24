@@ -77,9 +77,9 @@ import React, { useState , useEffect, useCallback} from 'react';
         border: '0px', 
         width: '300px',
         height: '300px',
-        background:'#fde6d1',
+        background:'#C2C3C5',
         fontSize:'18px',
-        boxShadow: "0px 20px 10px gray",
+        boxShadow: "0px 20px 10px #5F6368",
    };
 
     const conversionGuide = {
@@ -97,7 +97,7 @@ import React, { useState , useEffect, useCallback} from 'react';
     // An input text field that outputs converted result (readonly/noneditable)
     return (
         
-        <><div align="center"><h2 style = {{fontWeight: '800', fontSize: '25px'}}>Temperature Conversion</h2>
+        <><div align="center"><h1>Temperature Conversion</h1>
         <h2 style = {{fontWeight: '500',color: '#424242', fontSize: '25px'}}> Enter a number and select units </h2> 
         <br></br>
             <body style={styles}>
