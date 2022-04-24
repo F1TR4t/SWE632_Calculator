@@ -8,10 +8,22 @@ const TaxCalculator = () =>{
     const [values4, setValues4] = useState('0');
 
     const box = {
-        border: '2px solid rgba(0, 0, 0, 1.00)', 
+        border: '0px', 
         width: '500px',
         height: '120px',
         background: '#fde6d1',
+        padding: '10px',
+        boxShadow: "0px 20px 10px gray",
+    };
+    const box2 = {
+        border: '0px', 
+        width: '400px',
+        height: '80px',
+        background: '#fde6d1',
+        padding: '10px',
+        fontSize: '18px',
+        fontWeight: 'bold',
+        boxShadow: "0px 20px 10px gray",
     };
 
     const calcTax = () => {
@@ -19,51 +31,52 @@ const TaxCalculator = () =>{
         var totalFed = 0;
         var totalSt = 0;
         var taxableIncome = values2-values3-values4;
+        var bracket;
+        var bracket2;
 
         digits.push(<h5>Total taxable income: ${taxableIncome.toFixed(2)}</h5>)
 
-        digits.push(<h3>Federal tax calculation:</h3>)
         // calculated based on brackets from nerd wallet: https://www.nerdwallet.com/article/taxes/federal-income-tax-brackets
         if(taxableIncome===0){
-            digits.push(<text>Tax Bracket: N/A</text>)
         }
         else if(taxableIncome<=9950){
             totalFed = taxableIncome*.1;
-            digits.push(<text>Tax Bracket: 10%</text>)
+            bracket = <text>Federal Tax Bracket: 10%</text>
         }
         else if(taxableIncome<=40525){
             totalFed = 995+(taxableIncome-9950)*.12;
-            digits.push(<text>Tax Bracket: 12% (on income above $9,950)</text>)
+            bracket = <text>Federal Tax Bracket: 12% (on income above $9,950)</text>
         }
         else if(taxableIncome<=86375){
             totalFed = 4664+(taxableIncome-40525)*.22;
-            digits.push(<text>Tax Bracket: 22% (on income above $40,525)</text>)
+            bracket = <text>Federal Tax Bracket: 22% (on income above $40,525)</text>
         }
         else if(taxableIncome<=164925){
             totalFed = 14751+(taxableIncome-85375)*.24;
-            digits.push(<text>Tax Bracket: 24% (on income above $86,375)</text>)
+            bracket = <text>Federal Tax Bracket: 24% (on income above $86,375)</text>
         }
         else if(taxableIncome<=209425){
             totalFed = 33603+(taxableIncome-164925)*.32;
-            digits.push(<text>Tax Bracket: 32% (on income above $164,925)</text>)
+            bracket = <text>Federal Tax Bracket: 32% (on income above $164,925)</text>
         }
         else if(taxableIncome<=523600){
             totalFed = 47843+(taxableIncome-209425)*.35;
-            digits.push(<text>Tax Bracket: 35% (on income above $209,425)</text>)
+            bracket = <text>Federal Tax Bracket: 35% (on income above $209,425)</text>
         }
         else{
             totalFed = 157804.25+(taxableIncome-523600)*.37;
-            digits.push(<text>Tax Bracket: 37% (on income above $523,600)</text>)
+            bracket = <text>Federal Tax Bracket: 37% (on income above $523,600)</text>
         }
 
-        digits.push(<h4>${totalFed.toFixed(2)} in Federal Taxes</h4>)
+        digits.push(<span style={{ fontWeight: 'bold'}}>${totalFed.toFixed(2)} in Federal Taxes</span>)
+        digits.push(<br></br>)
+        digits.push(bracket)
 
-        digits.push(<h3>Estimated State tax calculation:</h3>)
+        
         
         // taxes for state estimated using diagram from: https://taxfoundation.org/publications/state-individual-income-tax-rates-and-brackets/
         switch (values1) {
             case 'XX':
-                digits.push(<text>Tax Bracket: N/A</text>)
                 break;
             case 'WA':
             case 'NV':
@@ -74,7 +87,7 @@ const TaxCalculator = () =>{
             case 'FL':
             case 'AK':
                 totalSt = 0;
-                digits.push(<text>No State Income Tax in {values1}</text>)
+                bracket2 = <text>No State Income Tax in {values1}</text>
                 break;
             case 'OK':
             case 'AL':
@@ -83,162 +96,166 @@ const TaxCalculator = () =>{
             case 'NH':
             case 'MA':
                 totalSt = taxableIncome*.05;
-                digits.push(<text>{values1} Tax: 5%</text>)
+                bracket2 = <text>{values1} Tax: 5%</text>
                 break;
             case 'CO':
                 totalSt = taxableIncome*.0455;
-                digits.push(<text>{values1} Tax: 4.55%</text>)
+                bracket2 = <text>{values1} Tax: 4.55%</text>
                 break;
             case 'OR':
                 totalSt = taxableIncome*.099;
-                digits.push(<text>{values1} Tax: 9.90%</text>)
+                bracket2 = <text>{values1} Tax: 9.90%</text>
                 break;
             case 'CA':
                 totalSt = taxableIncome*.133;
-                digits.push(<text>{values1} Tax: 13.3%</text>)
+                bracket2 = <text>{values1} Tax: 13.3%</text>
                 break;
             case 'ID':
                 totalSt = taxableIncome*.06925;
-                digits.push(<text>{values1} Tax: 6.925%</text>)
+                bracket2 = <text>{values1} Tax: 6.925%</text>
                 break;
             case 'MT':
                 totalSt = taxableIncome*.069;
-                digits.push(<text>{values1} Tax: 6.9%</text>)
+                bracket2 = <text>{values1} Tax: 6.9%</text>
                 break;
             case 'ND':
                 totalSt = taxableIncome*.029;
-                digits.push(<text>{values1} Tax: 2.9%</text>)
+                bracket2 = <text>{values1} Tax: 2.9%</text>
                 break;
             case 'MN':
                 totalSt = taxableIncome*.0985;
-                digits.push(<text>{values1} Tax: 9.85%</text>)
+                bracket2 = <text>{values1} Tax: 9.85%</text>
                 break;
             case 'WI':
                 totalSt = taxableIncome*.0765;
-                digits.push(<text>{values1} Tax: 7.65%</text>)
+                bracket2 = <text>{values1} Tax: 7.65%</text>
                 break;
             case 'MI':
                 totalSt = taxableIncome*.0425;
-                digits.push(<text>{values1} Tax: 4.25%</text>)
+                bracket2 = <text>{values1} Tax: 4.25%</text>
                 break;
             case 'NY':
                 totalSt = taxableIncome*.0882;
-                digits.push(<text>{values1} Tax: 8.82%</text>)
+                bracket2 = <text>{values1} Tax: 8.82%</text>
                 break;
             case 'VT':
                 totalSt = taxableIncome*.0875;
-                digits.push(<text>{values1} Tax: 8.75%</text>)
+                bracket2 = <text>{values1} Tax: 8.75%</text>
                 break;
             case 'ME':
                 totalSt = taxableIncome*.0715;
-                digits.push(<text>{values1} Tax: 7.15%</text>)
+                bracket2 = <text>{values1} Tax: 7.15%</text>
                 break;
             case 'OH':
                 totalSt = taxableIncome*.04797;
-                digits.push(<text>{values1} Tax: 4.797%</text>)
+                bracket2 = <text>{values1} Tax: 4.797%</text>
                 break;
             case 'IL':
                 totalSt = taxableIncome*.0495;
-                digits.push(<text>{values1} Tax: 4.95%</text>)
+                bracket2 = <text>{values1} Tax: 4.95%</text>
                 break;
             case 'WV':
                 totalSt = taxableIncome*.065;
-                digits.push(<text>{values1} Tax: 6.5%</text>)
+                bracket2 = <text>{values1} Tax: 6.5%</text>
                 break;
             case 'VA':
             case 'GA':
             case 'MD':
                 totalSt = taxableIncome*.0575;
-                digits.push(<text>{values1} Tax: 5.75%</text>)
+                bracket2 = <text>{values1} Tax: 5.75%</text>
                 break;
             case 'NC':
                 totalSt = taxableIncome*.0525;
-                digits.push(<text>{values1} Tax: 5.25%</text>)
+                bracket2 = <text>{values1} Tax: 5.25%</text>
                 break;
             case 'AZ':
                 totalSt = taxableIncome*.08;
-                digits.push(<text>{values1} Tax: 8%</text>)
+                bracket2 = <text>{values1} Tax: 8%</text>
                 break;
             case 'AR':
                 totalSt = taxableIncome*.059;
-                digits.push(<text>{values1} Tax: 5.9%</text>)
+                bracket2 = <text>{values1} Tax: 5.9%</text>
                 break;
             case 'CT':
                 totalSt = taxableIncome*.0699;
-                digits.push(<text>{values1} Tax: 6.99%</text>)
+                bracket2 = <text>{values1} Tax: 6.99%</text>
                 break;
             case 'DE':
                 totalSt = taxableIncome*.066;
-                digits.push(<text>{values1} Tax: 6.6%</text>)
+                bracket2 = <text>{values1} Tax: 6.6%</text>
                 break;
             case 'HI':
                 totalSt = taxableIncome*.11;
-                digits.push(<text>{values1} Tax: 11%</text>)
+                bracket2 = <text>{values1} Tax: 11%</text>
                 break;
             case 'IN':
                 totalSt = taxableIncome*.0323;
-                digits.push(<text>{values1} Tax: 3.23%</text>)
+                bracket2 = <text>{values1} Tax: 3.23%</text>
                 break;
             case 'IA':
                 totalSt = taxableIncome*.0853;
-                digits.push(<text>{values1} Tax: 8.53%</text>)
+                bracket2 = <text>{values1} Tax: 8.53%</text>
                 break;
             case 'KS':
                 totalSt = taxableIncome*.057;
-                digits.push(<text>{values1} Tax: 5.7%</text>)
+                bracket2 = <text>{values1} Tax: 5.7%</text>
                 break;
             case 'LA':
                 totalSt = taxableIncome*.06;
-                digits.push(<text>{values1} Tax: 6%</text>)
+                bracket2 = <text>{values1} Tax: 6%</text>
                 break;
             case 'MO':
                 totalSt = taxableIncome*.054;
-                digits.push(<text>{values1} Tax: 5.4%</text>)
+                bracket2 = <text>{values1} Tax: 5.4%</text>
                 break;
             case 'NE':
                 totalSt = taxableIncome*.0684;
-                digits.push(<text>{values1} Tax: 6.84%</text>)
+                bracket2 = <text>{values1} Tax: 6.84%</text>
                 break;
             case 'NJ':
                 totalSt = taxableIncome*.1075;
-                digits.push(<text>{values1} Tax: 10.75%</text>)
+                bracket2 = <text>{values1} Tax: 10.75%</text>
                 break;
             case 'NM':
                 totalSt = taxableIncome*.059;
-                digits.push(<text>{values1} Tax: 5.9%</text>)
+                bracket2 = <text>{values1} Tax: 5.9%</text>
                 break;
             case 'PA':
                 totalSt = taxableIncome*.0307;
-                digits.push(<text>{values1} Tax: 3.07%</text>)
+                bracket2 = <text>{values1} Tax: 3.07%</text>
                 break;
             case 'RI':
                 totalSt = taxableIncome*.0599;
-                digits.push(<text>{values1} Tax: 5.99%</text>)
+                bracket2 = <text>{values1} Tax: 5.99%</text>
                 break;
             case 'SC':
                 totalSt = taxableIncome*.07;
-                digits.push(<text>{values1} Tax: 7%</text>)
+                bracket2 = <text>{values1} Tax: 7%</text>
                 break;
             case 'UT':
                 totalSt = taxableIncome*.0495;
-                digits.push(<text>{values1} Tax: 4.95%</text>)
+                bracket2 = <text>{values1} Tax: 4.95%</text>
                 break;
             case 'DC':
                 totalSt = taxableIncome*.0895;
-                digits.push(<text>{values1} Tax: 8.95%</text>)
+                bracket2 = <text>{values1} Tax: 8.95%</text>
                 break;
             default:
         }
-        
-        
-
-        digits.push(<h4>${totalSt.toFixed(2)} in State Taxes</h4>)
 
         digits.push(<br></br>)
+        digits.push(<br></br>)
+        digits.push(<span style={{ fontWeight: 'bold'}}>${totalSt.toFixed(2)} in State Taxes</span>)
+        digits.push(<br></br>)
+        digits.push(bracket2)
+
+        digits.push(<br></br>)
+        digits.push(<br></br>)
         digits.push(
-            <body style={box}>
-                <h2>Estimated Total Taxes: ${(totalFed+totalSt).toFixed(2)}</h2>
-                <h2>Take-home Income: ${(taxableIncome-totalFed-totalSt).toFixed(2)}</h2>
+            <body style={box2}>
+                Estimated Total Taxes: ${(totalFed+totalSt).toFixed(2)}
+                <br></br>
+                Take-home Income: ${(taxableIncome-totalFed-totalSt).toFixed(2)}
             </body>
         )
         digits.push(<br></br>)
@@ -249,9 +266,8 @@ const TaxCalculator = () =>{
     return (
         
         <div align="center"><h2>Income Tax Calculator</h2>
-        <p>Input Household Income and State.</p>
         <body style={box}>
-            <br></br>
+            <span style={{ fontWeight: 'bold'}}> Input Household Income and State.</span>
             <div>
                 <form>
                     <input id = "income" type='number' onChange={e => setValues2(e.target.value)}/>
